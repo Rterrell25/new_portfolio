@@ -3,7 +3,6 @@ import { Link } from "react-router-dom"
 
 // MUI STUFF
 import { makeStyles } from "@material-ui/styles"
-import Typography from "@material-ui/core/Typography"
 import Grid from "@material-ui/core/Grid"
 import SwipeableDrawer from "@material-ui/core/SwipeableDrawer"
 import Button from "@material-ui/core/Button"
@@ -75,7 +74,7 @@ const HeaderMobile = () => {
         </Grid>
         <Grid item xs={10} container justify='flex-end'>
           <Button color='inherit' component={Link} to='/'>
-            <Typography variant='h6'>Rob's Portfolio</Typography>
+            Home
           </Button>
         </Grid>
       </Grid>

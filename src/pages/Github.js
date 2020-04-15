@@ -90,87 +90,89 @@ const Profile = () => {
 
   const classes = useStyles()
   return (
-    <div style={{ marginTop: 85 }}>
-      <Container className={classes.dashboardContainer}>
-        <Card className={classes.card} style={{ width: "100%" }}>
-          <CardContent className={classes.content}>
-            <div className={classes.form}>
-              <Grid
-                container
-                spacing={2}
-                alignItems='center'
-                justify='space-between'
-              >
-                <Grid item sm={4} xs={12} className={classes.grid}>
-                  <SelectStatus
-                    language={formData.language}
-                    handleInputChange={handleInputChange}
-                  />
+    <>
+      <div style={{ marginTop: 85, marginBottom: 85 }}>
+        <Container className={classes.dashboardContainer}>
+          <Card className={classes.card} style={{ width: "100%" }}>
+            <CardContent className={classes.content}>
+              <div className={classes.form}>
+                <Grid
+                  container
+                  spacing={2}
+                  alignItems='center'
+                  justify='space-between'
+                >
+                  <Grid item sm={4} xs={12} className={classes.grid}>
+                    <SelectStatus
+                      language={formData.language}
+                      handleInputChange={handleInputChange}
+                    />
+                  </Grid>
+                  <Grid item sm={4} xs={12} className={classes.grid}>
+                    <TextField
+                      className={classes.jobField}
+                      margin='normal'
+                      fullWidth
+                      id='search'
+                      name='search'
+                      label='Search by Title'
+                      placeholder='Search by Title'
+                      onChange={handleInputChange("search")}
+                      value={formData.search}
+                    />
+                  </Grid>
+                  <Grid item sm={2} xs={12} className={classes.grid}>
+                    <Button
+                      fullWidth
+                      variant='contained'
+                      color='primary'
+                      onClick={handleUpdated}
+                    >
+                      Updated {updated ? "(oldest)" : "(newest)"}
+                    </Button>
+                  </Grid>
+                  <Grid item sm={2} xs={12} className={classes.grid}>
+                    <Button
+                      fullWidth
+                      variant='contained'
+                      color='primary'
+                      onClick={handleCreated}
+                    >
+                      Created {created ? "(oldest)" : "(newest)"}
+                    </Button>
+                  </Grid>
                 </Grid>
-                <Grid item sm={4} xs={12} className={classes.grid}>
-                  <TextField
-                    className={classes.jobField}
-                    margin='normal'
-                    fullWidth
-                    id='search'
-                    name='search'
-                    label='Search by Title'
-                    placeholder='Search by Title'
-                    onChange={handleInputChange("search")}
-                    value={formData.search}
-                  />
-                </Grid>
-                <Grid item sm={2} xs={12} className={classes.grid}>
-                  <Button
-                    fullWidth
-                    variant='contained'
-                    color='primary'
-                    onClick={handleUpdated}
-                  >
-                    Updated {updated ? "(oldest)" : "(newest)"}
-                  </Button>
-                </Grid>
-                <Grid item sm={2} xs={12} className={classes.grid}>
-                  <Button
-                    fullWidth
-                    variant='contained'
-                    color='primary'
-                    onClick={handleCreated}
-                  >
-                    Created {created ? "(oldest)" : "(newest)"}
-                  </Button>
-                </Grid>
-              </Grid>
-            </div>
-          </CardContent>
-        </Card>
-      </Container>
-      {!data ? (
-        <h1>Loading...</h1>
-      ) : (
-        <Container style={{ padding: 10 }}>
-          {!data ? (
-            <div style={{ placeItems: "center" }}>Loading...</div>
-          ) : (
-            <Grid container alignItems='center' spacing={4}>
-              {data &&
-                data
-                  .filter((data) => {
-                    if (formData.language === "All") return true
-                    return data.language === formData.language
-                  })
-                  .filter((data) => {
-                    if (formData.search === "") return true
-                    return (data.name + data.language)
-                      .toLowerCase()
-                      .includes(formData.search.toLowerCase())
-                  })
-                  .map((user) => <RepoCard key={user.id} user={user} />)}
-            </Grid>
-          )}
+              </div>
+            </CardContent>
+          </Card>
         </Container>
-      )}
-    </div>
+        {!data ? (
+          <h1>Loading...</h1>
+        ) : (
+          <Container style={{ padding: 10 }}>
+            {!data ? (
+              <div style={{ placeItems: "center" }}>Loading...</div>
+            ) : (
+              <Grid container alignItems='center' spacing={4}>
+                {data &&
+                  data
+                    .filter((data) => {
+                      if (formData.language === "All") return true
+                      return data.language === formData.language
+                    })
+                    .filter((data) => {
+                      if (formData.search === "") return true
+                      return (data.name + data.language)
+                        .toLowerCase()
+                        .includes(formData.search.toLowerCase())
+                    })
+                    .map((user) => <RepoCard key={user.id} user={user} />)}
+              </Grid>
+            )}
+          </Container>
+        )}
+      </div>
+    </>
   )
 }
 export default Profile

@@ -23,25 +23,27 @@ const RepoCard = ({ user }) => {
 
   return (
     <Grid item xs={12} sm={6} md={4}>
-      <Card className={classes.card}>
-        <CardContent style={{ textAlign: "center", marginTop: "20px" }}>
-          <Typography variant='h5' component='h2'>
-            {user.name}
-          </Typography>
-          <br />
-          <Typography variant='h5' component='h2'>
-            {user.language}
-          </Typography>
-          <br />
-          <Typography variant='body1'>
-            Updated: {moment(user.updated_at).startOf("day").fromNow()}
-          </Typography>
-          <Typography variant='body1'>
-            Created:
-            {moment(user.created_at).startOf("day").fromNow()}
-          </Typography>
-        </CardContent>
-      </Card>
+      <a href={user.html_url} rel='noopener noreferrer' target='_blank'>
+        <Card className={classes.card}>
+          <CardContent style={{ textAlign: "center", marginTop: "20px" }}>
+            <Typography variant='h5' component='h2'>
+              {user.name}
+            </Typography>
+            <br />
+            <Typography variant='h5' component='h2'>
+              {user.language}
+            </Typography>
+            <br />
+            <Typography variant='body1'>
+              Updated: {moment(user.updated_at).startOf("day").fromNow()}
+            </Typography>
+            <Typography variant='body1'>
+              Created:
+              {moment(user.created_at).startOf("day").fromNow()}
+            </Typography>
+          </CardContent>
+        </Card>
+      </a>
     </Grid>
   )
 }

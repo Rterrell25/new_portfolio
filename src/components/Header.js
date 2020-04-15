@@ -13,7 +13,7 @@ const Header = () => {
       <Grid container justify='space-between' alignItems='center'>
         <Grid item xs={2}>
           <Button color='inherit' component={Link} to='/'>
-            Rob's Portfolio
+            Home
           </Button>
         </Grid>
         <Grid item xs={10} container justify='flex-end'>
@@ -21,6 +21,9 @@ const Header = () => {
             <>
               <Button color='inherit' component={Link} to='/github'>
                 Github
+              </Button>
+              <Button color='inherit' component={Link} to='/portfolio'>
+                Portfolio
               </Button>
             </>
           </div>
