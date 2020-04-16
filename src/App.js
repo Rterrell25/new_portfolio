@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useCallback } from "react"
+import React, { useContext, useEffect, useCallback, Suspense } from "react"
 import axios from "axios"
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom"
 import "./App.css"
@@ -15,11 +15,14 @@ import MainTheme from "./utils/MainTheme"
 // pages
 import Github from "./pages/Github"
 import Portfolio from "./pages/Portfolio"
-import Home from "./pages/Home"
+// import Home from "./pages/Home"
 
 // MUI
 import { MuiThemeProvider, createMuiTheme } from "@material-ui/core/styles/"
 import CssBaseline from "@material-ui/core/CssBaseline"
+import CircularProgress from "@material-ui/core/CircularProgress"
+
+const Home = React.lazy(() => import("./pages/Home"))
 
 const App = () => {
   const { setData } = useContext(GithubContext)
@@ -43,16 +46,18 @@ const App = () => {
     <MuiThemeProvider theme={theme}>
       <CssBaseline />
       <div className='App'>
-        <Router>
-          <Navbar />
-          <div className='container'>
-            <Switch>
-              <Route exact path='/github' component={Github} />
-              <Route exact path='/portfolio' component={Portfolio} />
-              <Route exact path='/' component={Home} />
-            </Switch>
-          </div>
-        </Router>
+        <Suspense fallback={<CircularProgress size={2} />}>
+          <Router>
+            <Navbar />
+            <div className='container'>
+              <Switch>
+                <Route exact path='/github' component={Github} />
+                <Route exact path='/portfolio' component={Portfolio} />
+                <Route exact path='/' component={Home} />
+              </Switch>
+            </div>
+          </Router>
+        </Suspense>
       </div>
     </MuiThemeProvider>
   )
