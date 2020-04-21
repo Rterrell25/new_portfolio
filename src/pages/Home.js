@@ -167,7 +167,12 @@ const Home = () => {
           target='_blank'
           style={{ margin: "1%" }}
         >
-          <Chip icon={<GitHubIcon />} label='GitHub' clickable />
+          <Chip
+            icon={<GitHubIcon />}
+            label='GitHub'
+            clickable
+            color='primary'
+          />
         </a>
         <a
           rel='noopener noreferrer'
@@ -175,7 +180,12 @@ const Home = () => {
           target='_blank'
           style={{ margin: "1%" }}
         >
-          <Chip icon={<LinkedInIcon />} label='LinkedIn' clickable />
+          <Chip
+            icon={<LinkedInIcon />}
+            label='LinkedIn'
+            clickable
+            color='primary'
+          />
         </a>
       </Box>
     </>

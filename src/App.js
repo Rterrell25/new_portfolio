@@ -14,15 +14,15 @@ import MainTheme from "./utils/MainTheme"
 
 // pages
 import Github from "./pages/Github"
-import Portfolio from "./pages/Portfolio"
-// import Home from "./pages/Home"
 
 // MUI
 import { MuiThemeProvider, createMuiTheme } from "@material-ui/core/styles/"
 import CssBaseline from "@material-ui/core/CssBaseline"
 import CircularProgress from "@material-ui/core/CircularProgress"
 
+// Lazy Loading
 const Home = React.lazy(() => import("./pages/Home"))
+const Portfolio = React.lazy(() => import("./pages/Portfolio"))
 
 const App = () => {
   const { setData } = useContext(GithubContext)
