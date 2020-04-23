@@ -53,6 +53,9 @@ const useStyles = makeStyles((theme) => ({
     marginTop: 70,
     padding: 10,
   },
+  loading: {
+    textAlign: "center",
+  },
 }))
 
 const INITIAL_STATE = {
@@ -147,7 +150,7 @@ const Profile = () => {
           </Card>
         </Container>
         {!data ? (
-          <h1>Loading...</h1>
+          <h1 className={classes.loading}>Initializing Repos...</h1>
         ) : (
           <Container style={{ padding: 10 }}>
             {!data ? (

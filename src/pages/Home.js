@@ -2,11 +2,15 @@ import React from "react"
 import Hero from "../images/Hero.png"
 import Resume from "../Resume/Resume.pdf"
 
-// MUI STUFF
+// MUI Icons
 import LinkedInIcon from "@material-ui/icons/LinkedIn"
 import GitHubIcon from "@material-ui/icons/GitHub"
 import StorageIcon from "@material-ui/icons/Storage"
 import CodeIcon from "@material-ui/icons/Code"
+
+// MUI
+
+import Chip from "@material-ui/core/Chip"
 import MobileFriendlyIcon from "@material-ui/icons/MobileFriendly"
 import Typography from "@material-ui/core/Typography"
 import Grid from "@material-ui/core/Grid"
@@ -46,6 +50,7 @@ const useStyles = makeStyles((theme) => ({
     display: "grid",
     placeItems: "center",
   },
+
   overlay_text: {
     color: "#FFFFFF",
     textAlign: "center",
@@ -157,9 +162,32 @@ const Home = () => {
         </Box>
       </Box>
       <Box className={classes.alumniChips}>
-        <GitHubIcon style={{ height: 35, width: 35, paddingRight: 9 }} />
-
-        <LinkedInIcon style={{ height: 35, width: 35 }} />
+        <a
+          rel='noopener noreferrer'
+          href='https://github.com/Rterrell25'
+          target='_blank'
+          style={{ margin: "1%" }}
+        >
+          <Chip
+            icon={<GitHubIcon />}
+            label='GitHub'
+            clickable
+            color='primary'
+          />
+        </a>
+        <a
+          rel='noopener noreferrer'
+          href='https://www.linkedin.com/in/rterrell25/'
+          target='_blank'
+          style={{ margin: "1%" }}
+        >
+          <Chip
+            icon={<LinkedInIcon />}
+            label='LinkedIn'
+            clickable
+            color='primary'
+          />
+        </a>
       </Box>
     </>
   )
