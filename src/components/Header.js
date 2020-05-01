@@ -25,6 +25,9 @@ const Header = () => {
               <Button color='inherit' component={Link} to='/portfolio'>
                 Portfolio
               </Button>
+              <Button color='inherit' component={Link} to='/contact'>
+                Contact
+              </Button>
             </>
           </div>
         </Grid>

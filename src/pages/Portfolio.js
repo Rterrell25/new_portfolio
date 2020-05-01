@@ -1,9 +1,17 @@
-import React from "react"
+import React, { useState, useEffect } from "react"
 import BarHop from "../images/BarHop.jpg"
 import Oddjobs from "../images/Oddjobs.png"
 import JobTracker from "../images/JobTracker.png"
+import BarhopPlace from "../images/BarhopPlace.jpg"
+import OddjobsPlace from "../images/OddjobsPlace.png"
+import JobTrackerPlace from "../images/JobTrackerPlace.png"
+import Img from "react-cool-img"
+import BarHopModal from "../components/BarHopModal"
+import OddjobsModal from "../components/OddjobsModal"
+import JobTrackerModal from "../components/JobTrackerModal"
 
 // Material UI
+import Tooltip from "@material-ui/core/Tooltip"
 import Grid from "@material-ui/core/Grid"
 import { makeStyles } from "@material-ui/core/styles"
 import Typography from "@material-ui/core/Typography"
@@ -33,10 +41,44 @@ const useStyles = makeStyles((theme) => ({
     display: "flex",
     justifyContent: "center",
   },
+
+  hide: {
+    "@media (max-width: 1024px)": {
+      display: "none",
+    },
+    "@media (max-width: 700px)": {
+      display: "none",
+    },
+    "@media (max-width: 600px)": {
+      display: "none",
+    },
+  },
+
+  modal: {
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  paper: {
+    backgroundColor: theme.palette.background.paper,
+    border: "2px solid #000",
+    boxShadow: theme.shadows[5],
+    padding: theme.spacing(2, 4, 3),
+    height: "80%",
+    width: "80%",
+  },
 }))
 
 const Portfolio = () => {
+  const [ready, setReady] = useState(false)
   const classes = useStyles()
+
+  useEffect(() => {
+    const _TIMER = setTimeout(() => {
+      setReady(true)
+      clearTimeout(_TIMER)
+    }, 60)
+  }, [])
   return (
     <>
       <Container className={classes.dashboardContainer}>
@@ -53,10 +95,11 @@ const Portfolio = () => {
             className={classes.grid}
             style={{ marginBottom: 20 }}
           >
-            <img
+            <Img
+              placeholder={BarhopPlace}
               src={BarHop}
               alt='barhop'
-              loading='lazy'
+              cache={false}
               className={classes.image}
             />
           </Grid>
@@ -71,7 +114,10 @@ const Portfolio = () => {
             <Container
               component='main'
               maxWidth='xs'
-              style={{ marginBottom: 20 }}
+              style={{
+                marginBottom: 20,
+                visibility: ready ? "visible" : "hidden",
+              }}
             >
               <Typography variant='h4'>Bar Hop</Typography>
               <br />
@@ -82,19 +128,24 @@ const Portfolio = () => {
               </Typography>
               <br />
               <Box className={classes.alumniChips}>
-                <a
-                  rel='noopener noreferrer'
-                  href='https://barhop-wyncode.herokuapp.com/'
-                  target='_blank'
-                  style={{ margin: "1%" }}
+                <Tooltip
+                  title='Please Note: Hosted on free tier of Heroku, site takes a few minutes to load'
+                  aria-label='add'
                 >
-                  <Chip
-                    icon={<LanguageIcon />}
-                    label='View Site'
-                    clickable
-                    color='primary'
-                  />
-                </a>
+                  <a
+                    rel='noopener noreferrer'
+                    href='https://barhop-wyncode.herokuapp.com/'
+                    target='_blank'
+                    style={{ margin: "1%" }}
+                  >
+                    <Chip
+                      icon={<LanguageIcon />}
+                      label='View Site'
+                      clickable
+                      color='primary'
+                    />
+                  </a>
+                </Tooltip>
                 <a
                   rel='noopener noreferrer'
                   href='https://github.com/Rterrell25/Bar_Hop_React_App'
@@ -108,6 +159,7 @@ const Portfolio = () => {
                     color='primary'
                   />
                 </a>
+                <BarHopModal />
               </Box>
             </Container>
           </Grid>
@@ -121,10 +173,11 @@ const Portfolio = () => {
             className={classes.grid}
             style={{ marginTop: 20, marginBottom: 20 }}
           >
-            <img
+            <Img
+              placeholder={OddjobsPlace}
               src={Oddjobs}
-              alt='barhop'
-              loading='lazy'
+              alt='oddjobs'
+              cache={false}
               className={classes.image}
             />
           </Grid>
@@ -139,7 +192,10 @@ const Portfolio = () => {
             <Container
               component='main'
               maxWidth='xs'
-              style={{ marginBottom: 20 }}
+              style={{
+                marginBottom: 20,
+                visibility: ready ? "visible" : "hidden",
+              }}
             >
               <Typography variant='h4'>Odd Jobs</Typography>
               <br />
@@ -150,19 +206,24 @@ const Portfolio = () => {
               </Typography>
               <br />
               <Box className={classes.alumniChips}>
-                <a
-                  rel='noopener noreferrer'
-                  href='https://oddjobs-react.herokuapp.com/'
-                  target='_blank'
-                  style={{ margin: "1%" }}
+                <Tooltip
+                  title='Please Note: Hosted on free tier of Heroku, site takes a few minutes to load'
+                  aria-label='add'
                 >
-                  <Chip
-                    icon={<LanguageIcon />}
-                    label='View Site'
-                    clickable
-                    color='primary'
-                  />
-                </a>
+                  <a
+                    rel='noopener noreferrer'
+                    href='https://oddjobs-react.herokuapp.com/'
+                    target='_blank'
+                    style={{ margin: "1%" }}
+                  >
+                    <Chip
+                      icon={<LanguageIcon />}
+                      label='View Site'
+                      clickable
+                      color='primary'
+                    />
+                  </a>
+                </Tooltip>
                 <a
                   rel='noopener noreferrer'
                   href='https://github.com/Rterrell25/Oddjobs_React_App'
@@ -176,6 +237,7 @@ const Portfolio = () => {
                     color='primary'
                   />
                 </a>
+                <OddjobsModal />
               </Box>
             </Container>
           </Grid>
@@ -189,10 +251,11 @@ const Portfolio = () => {
             className={classes.grid}
             style={{ marginTop: 20 }}
           >
-            <img
+            <Img
+              placeholder={JobTrackerPlace}
               src={JobTracker}
+              cache={false}
               alt='JobTracker'
-              loading='lazy'
               className={classes.image}
             />
           </Grid>
@@ -207,7 +270,10 @@ const Portfolio = () => {
             <Container
               component='main'
               maxWidth='xs'
-              style={{ marginBottom: 20 }}
+              style={{
+                marginBottom: 20,
+                visibility: ready ? "visible" : "hidden",
+              }}
             >
               <Typography variant='h4'>JobTracker</Typography>
               <br />
@@ -245,6 +311,7 @@ const Portfolio = () => {
                     color='primary'
                   />
                 </a>
+                <JobTrackerModal />
               </Box>
             </Container>
           </Grid>
