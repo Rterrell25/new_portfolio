@@ -1,5 +1,6 @@
 import React, { useState } from "react"
 import { Link } from "react-router-dom"
+import Icon from "../images/Icon.png"
 
 // MUI STUFF
 import { makeStyles } from "@material-ui/styles"
@@ -40,6 +41,13 @@ const useStyles = makeStyles((theme) => ({
   },
   navImage: {
     width: "100%",
+  },
+  image: {
+    height: 100,
+    width: 100,
+    display: "block",
+    marginLeft: "auto",
+    marginRight: "auto",
   },
 }))
 const HeaderMobile = () => {
@@ -91,13 +99,25 @@ const HeaderMobile = () => {
           onClick={toggleDrawer}
           onKeyDown={toggleDrawer}
         >
+          <ListItem button component={Link} to='/'>
+            <img
+              src={Icon}
+              alt='header mobile icon'
+              className={classes.image}
+            />
+          </ListItem>
           <Divider />
 
           <>
             <ListItem button component={Link} to='/github'>
               <ListItemText primary='Github' />
             </ListItem>
-
+            <ListItem button component={Link} to='/portfolio'>
+              <ListItemText primary='Portfolio' />
+            </ListItem>
+            <ListItem button component={Link} to='/contact'>
+              <ListItemText primary='Contact' />
+            </ListItem>
             <Divider />
           </>
         </List>

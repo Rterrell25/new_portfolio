@@ -1,12 +1,13 @@
-import React, { useState, createContext } from "react"
+import React, { createContext } from "react"
+import Github from "../components/Github"
 
 export const GithubContext = createContext()
 
 export const GithubProvider = (props) => {
-  const [data, setData] = useState(null)
+  const { data } = Github(null)
 
   return (
-    <GithubContext.Provider value={{ data, setData }}>
+    <GithubContext.Provider value={{ data }}>
       {props.children}
     </GithubContext.Provider>
   )

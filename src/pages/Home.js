@@ -1,16 +1,17 @@
 import React from "react"
 import Hero from "../images/Hero.png"
 import Resume from "../Resume/Resume.pdf"
-
+import { Link } from "react-scroll"
 // MUI Icons
 import LinkedInIcon from "@material-ui/icons/LinkedIn"
 import GitHubIcon from "@material-ui/icons/GitHub"
 import StorageIcon from "@material-ui/icons/Storage"
 import CodeIcon from "@material-ui/icons/Code"
+import EmailIcon from "@material-ui/icons/Email"
 
 // MUI
-
 import Chip from "@material-ui/core/Chip"
+import Tooltip from "@material-ui/core/Tooltip"
 import MobileFriendlyIcon from "@material-ui/icons/MobileFriendly"
 import Typography from "@material-ui/core/Typography"
 import Grid from "@material-ui/core/Grid"
@@ -68,7 +69,11 @@ const useStyles = makeStyles((theme) => ({
   alumniChips: {
     display: "flex",
     justifyContent: "center",
-    marginBottom: 40,
+    flexWrap: "wrap",
+    "& > *": {
+      margin: theme.spacing(0.5),
+    },
+    marginBottom: 30,
   },
 }))
 
@@ -91,9 +96,16 @@ const Home = () => {
                 Specializing in creating simplistic, yet beautiful user
                 interfaces.
               </Typography>
-              <Typography variant='body1' style={{ marginBottom: "15px" }}>
+              <Typography variant='body1'>
                 I build fast, interactive websites. Feel free to take a look at
                 my latest projects on the portfolio page.
+              </Typography>
+              <Typography variant='body1' style={{ marginBottom: "15px" }}>
+                Click{" "}
+                <Link to='social' smooth={true} offset={50} duration={1500}>
+                  <b style={{ cursor: "pointer" }}>here</b>{" "}
+                </Link>{" "}
+                to follow me on social media or send an email
               </Typography>
               <a href={Resume} download="Robert Terrell's Resume">
                 <Button
@@ -109,7 +121,7 @@ const Home = () => {
           </div>
         </Box>
         <Box>
-          <Container style={{ marginBottom: 100 }}>
+          <Container style={{ marginBottom: 120 }}>
             <Grid
               container
               spacing={2}
@@ -161,33 +173,48 @@ const Home = () => {
           </Container>
         </Box>
       </Box>
-      <Box className={classes.alumniChips}>
-        <a
-          rel='noopener noreferrer'
-          href='https://github.com/Rterrell25'
-          target='_blank'
-          style={{ margin: "1%" }}
-        >
-          <Chip
-            icon={<GitHubIcon />}
-            label='GitHub'
-            clickable
-            color='primary'
-          />
-        </a>
-        <a
-          rel='noopener noreferrer'
-          href='https://www.linkedin.com/in/rterrell25/'
-          target='_blank'
-          style={{ margin: "1%" }}
-        >
-          <Chip
-            icon={<LinkedInIcon />}
-            label='LinkedIn'
-            clickable
-            color='primary'
-          />
-        </a>
+      <Box id='social' className={classes.alumniChips}>
+        <Tooltip title='GitHub' aria-label='add'>
+          <a
+            href='https://github.com/Rterrell25'
+            target='_blank'
+            rel='noopener noreferrer'
+          >
+            <Chip
+              icon={<GitHubIcon />}
+              label='GitHub'
+              clickable
+              color='primary'
+              size='small'
+            />
+          </a>
+        </Tooltip>
+        <Tooltip title='LinkedIn' aria-label='add'>
+          <a
+            href='https://www.linkedin.com/in/rterrell25/'
+            target='_blank'
+            rel='noopener noreferrer'
+          >
+            <Chip
+              icon={<LinkedInIcon />}
+              label='LinkedIn'
+              size='small'
+              clickable
+              color='primary'
+            />
+          </a>
+        </Tooltip>
+        <Tooltip title='Email' aria-label='add'>
+          <a href='mailto: rterrell25@gmail.com'>
+            <Chip
+              icon={<EmailIcon />}
+              label='Email'
+              clickable
+              size='small'
+              color='primary'
+            />
+          </a>
+        </Tooltip>
       </Box>
     </>
   )
