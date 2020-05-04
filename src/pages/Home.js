@@ -2,6 +2,9 @@ import React from "react"
 import Hero from "../images/Hero.png"
 import Resume from "../Resume/Resume.pdf"
 import { Link } from "react-scroll"
+import Typical from "react-typical"
+import Bar from "../images/Bar.png"
+
 // MUI Icons
 import LinkedInIcon from "@material-ui/icons/LinkedIn"
 import GitHubIcon from "@material-ui/icons/GitHub"
@@ -10,6 +13,7 @@ import CodeIcon from "@material-ui/icons/Code"
 import EmailIcon from "@material-ui/icons/Email"
 
 // MUI
+import Divider from "@material-ui/core/Divider"
 import Chip from "@material-ui/core/Chip"
 import Tooltip from "@material-ui/core/Tooltip"
 import MobileFriendlyIcon from "@material-ui/icons/MobileFriendly"
@@ -75,6 +79,32 @@ const useStyles = makeStyles((theme) => ({
     },
     marginBottom: 30,
   },
+  image: {
+    display: "block",
+    marginLeft: "auto",
+    marginRight: "auto",
+    width: "100%",
+    backgroundColor: "#020202",
+    paddingLeft: 5,
+    height: 285,
+    "@media (max-width: 1024px)": {
+      height: 265,
+    },
+    "@media (max-width: 700px)": {
+      height: 240,
+    },
+    "@media (max-width: 600px)": {
+      height: 240,
+    },
+  },
+
+  dashboardContainer: {
+    marginTop: 90,
+    padding: 10,
+  },
+  grid: {
+    padding: 0,
+  },
 }))
 
 const Home = () => {
@@ -121,7 +151,7 @@ const Home = () => {
           </div>
         </Box>
         <Box>
-          <Container style={{ marginBottom: 120 }}>
+          <Container style={{ marginBottom: 20 }}>
             <Grid
               container
               spacing={2}
@@ -173,7 +203,135 @@ const Home = () => {
           </Container>
         </Box>
       </Box>
-      <Box id='social' className={classes.alumniChips}>
+
+      <br />
+
+      <Container style={{ marginBottom: 20 }}>
+        <Grid
+          container
+          spacing={2}
+          style={{
+            marginTop: "3%",
+          }}
+          alignItems='center'
+        >
+          <Grid
+            item
+            sm={6}
+            xs={12}
+            className={classes.grid}
+            style={{ marginBottom: 20 }}
+          >
+            <div style={{ backgroundColor: "#020202", margin: 0, padding: 0 }}>
+              <img
+                src={Bar}
+                style={{ width: "100%", marginBottom: 5, padding: 0 }}
+              />
+              <div className={classes.image}>
+                <Typography
+                  variant='body2'
+                  style={{ fontWeight: "bold", color: "#33cccc" }}
+                >
+                  ~
+                </Typography>
+                <Typography variant='body2' style={{ color: "#FFFFFF" }}>
+                  <span style={{ color: "#33cccc", fontWeight: "bold" }}>
+                    ~
+                  </span>{" "}
+                  cd desktop
+                </Typography>
+                <Typography variant='body2' style={{ color: "#FFFFFF" }}>
+                  <span style={{ color: "#33cccc", fontWeight: "bold" }}>
+                    desktop
+                  </span>{" "}
+                  mkdir About_Me
+                </Typography>
+                <Typography variant='body2' style={{ color: "#FFFFFF" }}>
+                  <span style={{ color: "#33cccc", fontWeight: "bold" }}>
+                    desktop
+                  </span>{" "}
+                  cd About_Me
+                </Typography>
+                <Typography variant='body2' style={{ color: "#FFFFFF" }}>
+                  <span style={{ color: "#33cccc", fontWeight: "bold" }}>
+                    About_Me
+                  </span>{" "}
+                  <Typical
+                    steps={[
+                      " touch web_developer.js",
+                      2000,
+                      " touch problem_solver.js",
+                      2000,
+                      " touch hard_worker.js",
+                      2000,
+                      " touch detail_oriented.html",
+                      2000,
+                      " touch loves_design.css",
+                      2000,
+                      " code .",
+                      5000,
+                    ]}
+                    loop={Infinity}
+                    wrapper='a'
+                  />
+                </Typography>
+              </div>
+            </div>
+          </Grid>
+
+          <Grid
+            item
+            sm={6}
+            xs={12}
+            className={classes.grid}
+            style={{ width: "100%", textAlign: "center", padding: 0 }}
+          >
+            <Container
+              component='main'
+              maxWidth='xs'
+              style={{
+                marginBottom: 20,
+              }}
+            >
+              <Typography variant='h4'>Bar Hop</Typography>
+              <br />
+              <Typography variant='body2'>
+                A platform that provides users with the top drinking places
+                based on their location. Technologies used: ReactJS, NodeJS,
+                JavaScript, and the Yelp API .
+              </Typography>
+              <br />
+              <Box className={classes.alumniChips}>
+                <Tooltip
+                  title='Please Note: Hosted on free tier of Heroku, site takes a few minutes to load'
+                  aria-label='add'
+                >
+                  <a
+                    rel='noopener noreferrer'
+                    href='https://barhop-wyncode.herokuapp.com/'
+                    target='_blank'
+                    style={{ margin: "1%" }}
+                  ></a>
+                </Tooltip>
+                <a
+                  rel='noopener noreferrer'
+                  href='https://github.com/Rterrell25/Bar_Hop_React_App'
+                  target='_blank'
+                  style={{ margin: "1%" }}
+                >
+                  <Chip
+                    icon={<GitHubIcon />}
+                    label='View Code'
+                    clickable
+                    color='primary'
+                  />
+                </a>
+              </Box>
+            </Container>
+          </Grid>
+        </Grid>
+      </Container>
+      {/* <Box id='social' className={classes.alumniChips}>
         <Tooltip title='GitHub' aria-label='add'>
           <a
             href='https://github.com/Rterrell25'
@@ -215,7 +373,7 @@ const Home = () => {
             />
           </a>
         </Tooltip>
-      </Box>
+      </Box> */}
     </>
   )
 }

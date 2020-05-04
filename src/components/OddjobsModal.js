@@ -76,7 +76,7 @@ const OddjobsModal = () => {
                 width: "100%",
               }}
             >
-              <source src='https://portfoliovideos1123.s3.us-east-2.amazonaws.com/Oddjobs.mov' />
+              <source src='http://daa792p138h1p.cloudfront.net/Oddjobs720.mov' />
             </video>
           </div>
         </Fade>

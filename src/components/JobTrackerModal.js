@@ -76,7 +76,7 @@ const JobTrackerModal = () => {
                 width: "100%",
               }}
             >
-              <source src='https://portfoliovideos1123.s3.us-east-2.amazonaws.com/JobTracker.mov' />
+              <source src='http://daa792p138h1p.cloudfront.net/JobTracker720.mov' />
             </video>
           </div>
         </Fade>
