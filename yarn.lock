@@ -1649,6 +1649,11 @@
     lodash "^4.17.13"
     to-fast-properties "^2.0.0"
 
+"@brainhubeu/react-carousel@^1.13.41":
+  version "1.13.41"
+  resolved "https://registry.yarnpkg.com/@brainhubeu/react-carousel/-/react-carousel-1.13.41.tgz#623e08f6c1beda40324c569d648a28f21d1b4cb1"
+  integrity sha512-B3WoGCUXrbbtRO+HH6xUE7NGlC7QmmgL3/PqgXxAsh4oyM/E1NbSwWlFe/vVejo1iEZ84luJha160+YuBTe++Q==
+
 "@camwiegert/typical@^0.1.1":
   version "0.1.1"
   resolved "https://registry.yarnpkg.com/@camwiegert/typical/-/typical-0.1.1.tgz#c75d3b658e2f542d113c3e266389794c7dc45d6d"
@@ -7337,6 +7342,11 @@ kleur@^3.0.3:
   version "3.0.3"
   resolved "https://registry.yarnpkg.com/kleur/-/kleur-3.0.3.tgz#a79c9ecc86ee1ce3fa6206d1216c501f147fc07e"
   integrity sha512-eTIzlVOSUR+JxdDFepEYcBMtZ9Qqdef+rnzWdRZuMbOywu5tO2w2N7rqjoANZ5k9vywhL6Br1VRjUIgTQx4E8w==
+
+kruulik-react-carousel@^1.4.2:
+  version "1.4.2"
+  resolved "https://registry.yarnpkg.com/kruulik-react-carousel/-/kruulik-react-carousel-1.4.2.tgz#f9cf550643073804c2ce7dce170af93c48a651c7"
+  integrity sha512-RfVHROy2prDFGPECb9G78CWXk6DJbleKKtdb3QIgWht+0nRlkhrBMX+kT5Rb2q61Zzbb/3ZqcYzEKlNhO4323Q==
 
 last-call-webpack-plugin@^3.0.0:
   version "3.0.0"

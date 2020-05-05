@@ -4,13 +4,10 @@ import Resume from "../Resume/Resume.pdf"
 import { Link } from "react-scroll"
 import Typical from "react-typical"
 import Bar from "../images/Bar.png"
-
-// MUI Icons
-import StorageIcon from "@material-ui/icons/Storage"
-import CodeIcon from "@material-ui/icons/Code"
+import Test from "../components/Test"
 
 // MUI
-import MobileFriendlyIcon from "@material-ui/icons/MobileFriendly"
+
 import Typography from "@material-ui/core/Typography"
 import Grid from "@material-ui/core/Grid"
 import Container from "@material-ui/core/Container"
@@ -145,55 +142,8 @@ const Home = () => {
           </div>
         </Box>
         <Box>
-          <Container style={{ marginBottom: 20 }}>
-            <Grid
-              container
-              spacing={2}
-              style={{
-                textAlign: "center",
-                marginTop: "3%",
-              }}
-              alignItems='center'
-            >
-              <Grid item sm={4} xs={12}>
-                <MobileFriendlyIcon style={{ height: 50, width: 50 }} />
-                <Typography variant='h5' style={{ marginBottom: "5px" }}>
-                  Mobile-Friendly
-                </Typography>
-                <Typography variant='body2'>
-                  Maintaining a mobile first mindset, while creating a
-                  responsive design, makes your website accessible to all users,
-                  regardless of their device.
-                </Typography>
-              </Grid>
-              <Grid item sm={4} xs={12}>
-                <CodeIcon style={{ height: 50, width: 50 }} />
-                <Typography variant='h5' style={{ marginBottom: "5px" }}>
-                  Design + Development
-                </Typography>
-                <Typography variant='body2'>
-                  Building out the visual components of a website using HTML5,
-                  CSS3, Material-UI, Javascript, and ReactJS. Using clean,
-                  modern designs - optimized for performance.
-                </Typography>
-              </Grid>
-              <Grid item sm={4} xs={12}>
-                <StorageIcon style={{ height: 50, width: 50 }} />
-                <Typography
-                  variant='h5'
-                  style={{
-                    marginBottom: "5px",
-                  }}
-                >
-                  Back-End Development
-                </Typography>
-                <Typography variant='body2'>
-                  Creating powerful back ends with fleshed out data models using
-                  technologies, such as AWS, NodeJS, Google Cloud(Firestore),
-                  Ruby on Rails, PostgreSQL, GraphQL
-                </Typography>
-              </Grid>
-            </Grid>
+          <Container style={{ marginBottom: 20, marginTop: 40 }}>
+            <Test />
           </Container>
         </Box>
       </Box>
