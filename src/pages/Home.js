@@ -6,16 +6,10 @@ import Typical from "react-typical"
 import Bar from "../images/Bar.png"
 
 // MUI Icons
-import LinkedInIcon from "@material-ui/icons/LinkedIn"
-import GitHubIcon from "@material-ui/icons/GitHub"
 import StorageIcon from "@material-ui/icons/Storage"
 import CodeIcon from "@material-ui/icons/Code"
-import EmailIcon from "@material-ui/icons/Email"
 
 // MUI
-import Divider from "@material-ui/core/Divider"
-import Chip from "@material-ui/core/Chip"
-import Tooltip from "@material-ui/core/Tooltip"
 import MobileFriendlyIcon from "@material-ui/icons/MobileFriendly"
 import Typography from "@material-ui/core/Typography"
 import Grid from "@material-ui/core/Grid"
@@ -225,6 +219,7 @@ const Home = () => {
             <div style={{ backgroundColor: "#020202", margin: 0, padding: 0 }}>
               <img
                 src={Bar}
+                alt='terminal bar'
                 style={{ width: "100%", marginBottom: 5, padding: 0 }}
               />
               <div className={classes.image}>
@@ -301,79 +296,10 @@ const Home = () => {
                 JavaScript, and the Yelp API .
               </Typography>
               <br />
-              <Box className={classes.alumniChips}>
-                <Tooltip
-                  title='Please Note: Hosted on free tier of Heroku, site takes a few minutes to load'
-                  aria-label='add'
-                >
-                  <a
-                    rel='noopener noreferrer'
-                    href='https://barhop-wyncode.herokuapp.com/'
-                    target='_blank'
-                    style={{ margin: "1%" }}
-                  ></a>
-                </Tooltip>
-                <a
-                  rel='noopener noreferrer'
-                  href='https://github.com/Rterrell25/Bar_Hop_React_App'
-                  target='_blank'
-                  style={{ margin: "1%" }}
-                >
-                  <Chip
-                    icon={<GitHubIcon />}
-                    label='View Code'
-                    clickable
-                    color='primary'
-                  />
-                </a>
-              </Box>
             </Container>
           </Grid>
         </Grid>
       </Container>
-      {/* <Box id='social' className={classes.alumniChips}>
-        <Tooltip title='GitHub' aria-label='add'>
-          <a
-            href='https://github.com/Rterrell25'
-            target='_blank'
-            rel='noopener noreferrer'
-          >
-            <Chip
-              icon={<GitHubIcon />}
-              label='GitHub'
-              clickable
-              color='primary'
-              size='small'
-            />
-          </a>
-        </Tooltip>
-        <Tooltip title='LinkedIn' aria-label='add'>
-          <a
-            href='https://www.linkedin.com/in/rterrell25/'
-            target='_blank'
-            rel='noopener noreferrer'
-          >
-            <Chip
-              icon={<LinkedInIcon />}
-              label='LinkedIn'
-              size='small'
-              clickable
-              color='primary'
-            />
-          </a>
-        </Tooltip>
-        <Tooltip title='Email' aria-label='add'>
-          <a href='mailto: rterrell25@gmail.com'>
-            <Chip
-              icon={<EmailIcon />}
-              label='Email'
-              clickable
-              size='small'
-              color='primary'
-            />
-          </a>
-        </Tooltip>
-      </Box> */}
     </>
   )
 }
