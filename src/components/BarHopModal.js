@@ -77,7 +77,7 @@ const BarHopModal = () => {
                 objectFit: "contain",
               }}
             >
-              <source src='https://portfoliovideos1123.s3.us-east-2.amazonaws.com/Barhop.mov' />
+              <source src='http://daa792p138h1p.cloudfront.net/Barhop720.mov' />
             </video>
           </div>
         </Fade>
