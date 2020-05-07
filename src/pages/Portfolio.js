@@ -234,7 +234,6 @@ const Portfolio = () => {
               component='main'
               maxWidth='xs'
               style={{
-                visibility: ready ? "visible" : "hidden",
                 textAlign: "center",
               }}
             >
@@ -340,7 +339,6 @@ const Portfolio = () => {
               component='main'
               maxWidth='xs'
               style={{
-                visibility: ready ? "visible" : "hidden",
                 textAlign: "center",
               }}
             >
