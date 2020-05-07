@@ -64,7 +64,7 @@ const Portfolio = () => {
     const _TIMER = setTimeout(() => {
       setReady(true)
       clearTimeout(_TIMER)
-    }, 60)
+    }, 70)
   }, [])
   return (
     <>
@@ -74,7 +74,7 @@ const Portfolio = () => {
           spacing={2}
           className={classes.grid}
           alignItems='center'
-          style={{ height: "100vh" }}
+          style={{ height: "100vh", visibility: ready ? "visible" : "hidden" }}
         >
           <Grid
             item
