@@ -65,7 +65,7 @@ const Portfolio = () => {
     const _TIMER = setTimeout(() => {
       setReady(true)
       clearTimeout(_TIMER)
-    }, 70)
+    }, 80)
   }, [])
 
   useEffect(() => {
