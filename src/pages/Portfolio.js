@@ -64,7 +64,7 @@ const Portfolio = () => {
     const _TIMER = setTimeout(() => {
       setReady(true)
       clearTimeout(_TIMER)
-    }, 100)
+    }, 150)
   }, [])
   return (
     <>
