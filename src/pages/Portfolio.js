@@ -129,15 +129,23 @@ const Portfolio = () => {
               component='main'
               maxWidth='xs'
               style={{
-                visibility: ready ? "visible" : "hidden",
                 textAlign: "center",
               }}
             >
-              <Typography variant='h5' style={{ marginBottom: 10 }}>
+              <Typography
+                variant='h5'
+                style={{
+                  marginBottom: 10,
+                  visibility: ready ? "visible" : "hidden",
+                }}
+              >
                 Bar Hop
               </Typography>
 
-              <Typography variant='body2'>
+              <Typography
+                variant='body2'
+                style={{ visibility: ready ? "visible" : "hidden" }}
+              >
                 A platform that provides users with the top drinking places
                 based on their location. Technologies used: ReactJS, NodeJS,
                 JavaScript, and the Yelp API .
@@ -230,11 +238,20 @@ const Portfolio = () => {
                 textAlign: "center",
               }}
             >
-              <Typography variant='h5' style={{ marginBottom: 10 }}>
+              <Typography
+                variant='h5'
+                style={{
+                  marginBottom: 10,
+                  visibility: ready ? "visible" : "hidden",
+                }}
+              >
                 Odd Jobs
               </Typography>
 
-              <Typography variant='body2'>
+              <Typography
+                variant='body2'
+                style={{ visibility: ready ? "visible" : "hidden" }}
+              >
                 A platform that pairs consumers with reliable contractors.
                 Technologies used: ReactJS, Ruby on Rails, PostgreSQL, Calendly
                 Integration and Google Maps API.
@@ -327,11 +344,20 @@ const Portfolio = () => {
                 textAlign: "center",
               }}
             >
-              <Typography variant='h5' style={{ marginBottom: 10 }}>
+              <Typography
+                variant='h5'
+                style={{
+                  marginBottom: 10,
+                  visibility: ready ? "visible" : "hidden",
+                }}
+              >
                 JobTracker
               </Typography>
 
-              <Typography variant='body2'>
+              <Typography
+                variant='body2'
+                style={{ visibility: ready ? "visible" : "hidden" }}
+              >
                 A platform that allows recent graduates from Wyncode Academy to
                 track job applications, store resume's, and monitor follow ups.
                 Technologies used: ReactJS, NodeJS, Google Cloud Functions, and
