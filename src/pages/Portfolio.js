@@ -58,6 +58,7 @@ const useStyles = makeStyles((theme) => ({
 
 const Portfolio = () => {
   const [ready, setReady] = useState(false)
+  const [ready2, setReady2] = useState(false)
   const classes = useStyles()
 
   useEffect(() => {
@@ -66,6 +67,14 @@ const Portfolio = () => {
       clearTimeout(_TIMER)
     }, 70)
   }, [])
+
+  useEffect(() => {
+    const _TIMER = setTimeout(() => {
+      setReady2(true)
+      clearTimeout(_TIMER)
+    }, 60)
+  }, [])
+
   return (
     <>
       <Container className={classes.dashboardContainer}>
@@ -89,7 +98,7 @@ const Portfolio = () => {
               marginLeft: "auto",
               marginRight: "auto",
               width: "100%",
-              visibility: ready ? "visible" : "hidden",
+              visibility: ready2 ? "visible" : "hidden",
             }}
           >
             <Img
@@ -186,7 +195,7 @@ const Portfolio = () => {
               marginLeft: "auto",
               marginRight: "auto",
               width: "100%",
-              visibility: ready ? "visible" : "hidden",
+              visibility: ready2 ? "visible" : "hidden",
             }}
           >
             <Img
@@ -283,7 +292,7 @@ const Portfolio = () => {
               marginLeft: "auto",
               marginRight: "auto",
               width: "100%",
-              visibility: ready ? "visible" : "hidden",
+              visibility: ready2 ? "visible" : "hidden",
             }}
           >
             <Img
