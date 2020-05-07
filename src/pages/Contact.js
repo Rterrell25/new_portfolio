@@ -19,6 +19,7 @@ const useStyles = makeStyles((theme) => ({
   form: {
     textAlign: "center",
     width: "100%", // Fix IE 11 issue.
+
     marginTop: theme.spacing(1),
     position: "relative",
     marginBottom: "25px",
@@ -114,7 +115,7 @@ const SignUp = ({ history }) => {
   return (
     <div style={{ marginTop: 70 }}>
       <Container component='main' maxWidth='xs'>
-        <div className={classes.paper}>
+        <div className={classes.paper} style={{ height: "100vh" }}>
           <div className={classes.image}>
             <img
               src={ContactPose}

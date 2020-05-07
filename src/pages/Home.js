@@ -2,18 +2,18 @@ import React from "react"
 import Hero from "../images/Hero.png"
 import Resume from "../Resume/Resume.pdf"
 import { Link } from "react-scroll"
-import Typical from "react-typical"
-import Bar from "../images/Bar.png"
 import Test from "../components/Test"
 
 // MUI
-
+import LinkedInIcon from "@material-ui/icons/LinkedIn"
+import GitHubIcon from "@material-ui/icons/GitHub"
+import Divider from "@material-ui/core/Divider"
 import Typography from "@material-ui/core/Typography"
-import Grid from "@material-ui/core/Grid"
 import Container from "@material-ui/core/Container"
 import Box from "@material-ui/core/Box"
 import { makeStyles } from "@material-ui/core/styles"
 import Button from "@material-ui/core/Button"
+import Chip from "@material-ui/core/Chip"
 
 const useStyles = makeStyles((theme) => ({
   background: {
@@ -50,6 +50,10 @@ const useStyles = makeStyles((theme) => ({
   overlay_text: {
     color: "#FFFFFF",
     textAlign: "center",
+
+    "@media (max-width: 600px)": {
+      textAlign: "left",
+    },
   },
   card: {
     minHeight: 250,
@@ -96,6 +100,9 @@ const useStyles = makeStyles((theme) => ({
   grid: {
     padding: 0,
   },
+  container: {
+    width: "80%",
+  },
 }))
 
 const Home = () => {
@@ -109,7 +116,7 @@ const Home = () => {
               <Typography
                 variant='h4'
                 className={classes.heroFont}
-                style={{ marginBottom: "15px" }}
+                style={{ marginBottom: "15px", textAlign: "center" }}
               >
                 Full-Stack Web Developer
               </Typography>
@@ -126,7 +133,7 @@ const Home = () => {
                 <Link to='social' smooth={true} offset={50} duration={1500}>
                   <b style={{ cursor: "pointer" }}>here</b>{" "}
                 </Link>{" "}
-                to follow me on social media or send an email
+                to learn about my background and follow me on social media
               </Typography>
               <a href={Resume} download="Robert Terrell's Resume">
                 <Button
@@ -134,6 +141,11 @@ const Home = () => {
                   color='primary'
                   disableElevation
                   className={classes.submit}
+                  style={{
+                    display: "block",
+                    marginLeft: "auto",
+                    marginRight: "auto",
+                  }}
                 >
                   Download Resume
                 </Button>
@@ -142,113 +154,93 @@ const Home = () => {
           </div>
         </Box>
         <Box>
-          <Container style={{ marginBottom: 20, marginTop: 40 }}>
+          <Container style={{ marginTop: 40 }}>
             <Test />
           </Container>
         </Box>
       </Box>
 
       <br />
-
-      <Container style={{ marginBottom: 20 }}>
-        <Grid
-          container
-          spacing={2}
-          style={{
-            marginTop: "3%",
-          }}
-          alignItems='center'
+      <Container style={{ marginBottom: 100 }}>
+        <Divider style={{ width: "100%", marginBottom: 40 }} />
+        <br />
+        <Typography
+          variant='h4'
+          className={classes.heroFont}
+          style={{ textTransform: "uppercase", textAlign: "center" }}
+          id='social'
         >
-          <Grid
-            item
-            sm={6}
-            xs={12}
-            className={classes.grid}
-            style={{ marginBottom: 20 }}
+          ROBERT FRANCIS <span style={{ color: "#0B54C1" }}>TERRELL</span>
+        </Typography>
+        <Typography
+          variant='body2'
+          style={{ textTransform: "uppercase", textAlign: "center" }}
+        >
+          720 Briny Avenue Pompano Beach, FL 33062 · (317) 258-0388 ·
+          <a href='mailto:rterrell25@gmail.com'>
+            <span style={{ color: "#0B54C1" }}>Rterrell25@gmail.com</span>
+          </a>
+        </Typography>
+        <br />
+        <Typography variant='body2'>
+          My name is Robert Terrell. Previously, I worked at a small/large
+          business loan vendor in Coral Springs, FL BFS Capital. During my time
+          at BFS Capital, I oversaw a project to automate banking operations. I
+          worked closely with a tech company called Ocrolus to develop rules for
+          the automated banking system. I led the testing and development phase
+          and refined the system as needed for final production. Working with
+          Ocrolus, gave me a taste of what I wanted to do in life. I wanted to
+          create, and build real-world solutions to today's problems.
+        </Typography>
+        <br />
+        <Typography variant='body2'>
+          I attended Wyncode Academy, where I immersed myself in the culture of
+          tech. Although making a career change was difficult, I was armed with
+          high attention to detail, problem-solving skills, and effective
+          communication skills that I fostered and developed in my past career.
+          I work hard every single day developing my new skillset as a full
+          stack developer, maintaining up-to-date industry knowledge. Web
+          development is ever-changing, and so is my knowledge base.
+        </Typography>
+        <br />
+        <Typography variant='body2'>
+          I pride myself on producing the highest quality of work possible. I
+          have a passion for continuing my learning and pushing the boundaries
+          of my knowledge. My primary objective when completing a project is to
+          solve a real-world problem for the client as well as the users who
+          will be using the product. I love coding, and I strive to become
+          better every single day. I'm interested in the entire frontend
+          spectrum and working on ambitious projects with positive people.
+        </Typography>
+        <br />
+        <Box className={classes.alumniChips}>
+          <a
+            rel='noopener noreferrer'
+            href='https://github.com/Rterrell25'
+            target='_blank'
+            style={{ margin: "1%" }}
           >
-            <div style={{ backgroundColor: "#020202", margin: 0, padding: 0 }}>
-              <img
-                src={Bar}
-                alt='terminal bar'
-                style={{ width: "100%", marginBottom: 5, padding: 0 }}
-              />
-              <div className={classes.image}>
-                <Typography
-                  variant='body2'
-                  style={{ fontWeight: "bold", color: "#33cccc" }}
-                >
-                  ~
-                </Typography>
-                <Typography variant='body2' style={{ color: "#FFFFFF" }}>
-                  <span style={{ color: "#33cccc", fontWeight: "bold" }}>
-                    ~
-                  </span>{" "}
-                  cd desktop
-                </Typography>
-                <Typography variant='body2' style={{ color: "#FFFFFF" }}>
-                  <span style={{ color: "#33cccc", fontWeight: "bold" }}>
-                    desktop
-                  </span>{" "}
-                  mkdir About_Me
-                </Typography>
-                <Typography variant='body2' style={{ color: "#FFFFFF" }}>
-                  <span style={{ color: "#33cccc", fontWeight: "bold" }}>
-                    desktop
-                  </span>{" "}
-                  cd About_Me
-                </Typography>
-                <Typography variant='body2' style={{ color: "#FFFFFF" }}>
-                  <span style={{ color: "#33cccc", fontWeight: "bold" }}>
-                    About_Me
-                  </span>{" "}
-                  <Typical
-                    steps={[
-                      " touch web_developer.js",
-                      2000,
-                      " touch problem_solver.js",
-                      2000,
-                      " touch hard_worker.js",
-                      2000,
-                      " touch detail_oriented.html",
-                      2000,
-                      " touch loves_design.css",
-                      2000,
-                      " code .",
-                      5000,
-                    ]}
-                    loop={Infinity}
-                    wrapper='a'
-                  />
-                </Typography>
-              </div>
-            </div>
-          </Grid>
-
-          <Grid
-            item
-            sm={6}
-            xs={12}
-            className={classes.grid}
-            style={{ width: "100%", textAlign: "center", padding: 0 }}
+            <Chip
+              icon={<GitHubIcon />}
+              label='GitHub'
+              clickable
+              color='primary'
+            />
+          </a>
+          <a
+            rel='noopener noreferrer'
+            href='https://www.linkedin.com/in/rterrell25/'
+            target='_blank'
+            style={{ margin: "1%" }}
           >
-            <Container
-              component='main'
-              maxWidth='xs'
-              style={{
-                marginBottom: 20,
-              }}
-            >
-              <Typography variant='h4'>Bar Hop</Typography>
-              <br />
-              <Typography variant='body2'>
-                A platform that provides users with the top drinking places
-                based on their location. Technologies used: ReactJS, NodeJS,
-                JavaScript, and the Yelp API .
-              </Typography>
-              <br />
-            </Container>
-          </Grid>
-        </Grid>
+            <Chip
+              icon={<LinkedInIcon />}
+              label='LinkedIn'
+              clickable
+              color='primary'
+            />
+          </a>
+        </Box>
       </Container>
     </>
   )

@@ -30,6 +30,7 @@ const useStyles = makeStyles((theme) => ({
   dashboardContainer: {
     marginTop: 90,
     padding: 10,
+    marginBottom: 40,
   },
   image: {
     display: "block",
@@ -73,40 +74,59 @@ const Portfolio = () => {
           spacing={2}
           className={classes.grid}
           alignItems='center'
+          style={{ height: "100vh" }}
         >
           <Grid
             item
-            sm={6}
             xs={12}
+            sm={9}
+            md={6}
+            lg={6}
+            xl={6}
             className={classes.grid}
-            style={{ marginBottom: 20 }}
+            style={{
+              display: "block",
+              marginLeft: "auto",
+              marginRight: "auto",
+              width: "100%",
+            }}
           >
             <Img
               placeholder={BarhopPlace}
               src={BarHop}
               alt='barhop'
-              cache={false}
               className={classes.image}
+              cache={false}
             />
           </Grid>
 
           <Grid
             item
-            sm={6}
             xs={12}
+            sm={9}
+            md={6}
+            lg={6}
+            xl={6}
             className={classes.grid}
-            style={{ width: "100%", textAlign: "center", padding: 0 }}
+            style={{
+              display: "block",
+              marginLeft: "auto",
+              marginRight: "auto",
+              width: "100%",
+            }}
           >
             <Container
               component='main'
               maxWidth='xs'
               style={{
-                marginBottom: 20,
                 visibility: ready ? "visible" : "hidden",
+                textAlign: "center",
               }}
             >
-              <Typography variant='h4'>Bar Hop</Typography>
-              <br />
+              <Typography variant='h5' style={{ marginBottom: 10 }}>
+                Bar Hop
+              </Typography>
+
               <Typography variant='body2'>
                 A platform that provides users with the top drinking places
                 based on their location. Technologies used: ReactJS, NodeJS,
@@ -149,15 +169,23 @@ const Portfolio = () => {
               </Box>
             </Container>
           </Grid>
-          <br />
-          <Divider style={{ width: "100%" }} />
-          <br />
+
+          <Divider style={{ width: "100%", marginTop: 30, marginBottom: 30 }} />
+
           <Grid
             item
-            sm={6}
             xs={12}
+            sm={9}
+            md={6}
+            lg={6}
+            xl={6}
             className={classes.grid}
-            style={{ marginTop: 20, marginBottom: 20 }}
+            style={{
+              display: "block",
+              marginLeft: "auto",
+              marginRight: "auto",
+              width: "100%",
+            }}
           >
             <Img
               placeholder={OddjobsPlace}
@@ -170,21 +198,31 @@ const Portfolio = () => {
 
           <Grid
             item
-            sm={6}
             xs={12}
+            sm={9}
+            md={6}
+            lg={6}
+            xl={6}
             className={classes.grid}
-            style={{ width: "100%", textAlign: "center", padding: 0 }}
+            style={{
+              display: "block",
+              marginLeft: "auto",
+              marginRight: "auto",
+              width: "100%",
+            }}
           >
             <Container
               component='main'
               maxWidth='xs'
               style={{
-                marginBottom: 20,
                 visibility: ready ? "visible" : "hidden",
+                textAlign: "center",
               }}
             >
-              <Typography variant='h4'>Odd Jobs</Typography>
-              <br />
+              <Typography variant='h5' style={{ marginBottom: 10 }}>
+                Odd Jobs
+              </Typography>
+
               <Typography variant='body2'>
                 A platform that pairs consumers with reliable contractors.
                 Technologies used: ReactJS, Ruby on Rails, PostgreSQL, Calendly
@@ -228,14 +266,22 @@ const Portfolio = () => {
             </Container>
           </Grid>
           <br />
-          <Divider style={{ width: "100%" }} />
+          <Divider style={{ width: "100%", marginTop: 30, marginBottom: 30 }} />
           <br />
           <Grid
             item
-            sm={6}
             xs={12}
+            sm={9}
+            md={6}
+            lg={6}
+            xl={6}
             className={classes.grid}
-            style={{ marginTop: 20 }}
+            style={{
+              display: "block",
+              marginLeft: "auto",
+              marginRight: "auto",
+              width: "100%",
+            }}
           >
             <Img
               placeholder={JobTrackerPlace}
@@ -248,21 +294,31 @@ const Portfolio = () => {
 
           <Grid
             item
-            sm={6}
             xs={12}
+            sm={9}
+            md={6}
+            lg={6}
+            xl={6}
             className={classes.grid}
-            style={{ width: "100%", textAlign: "center", padding: 0 }}
+            style={{
+              display: "block",
+              marginLeft: "auto",
+              marginRight: "auto",
+              width: "100%",
+            }}
           >
             <Container
               component='main'
               maxWidth='xs'
               style={{
-                marginBottom: 20,
                 visibility: ready ? "visible" : "hidden",
+                textAlign: "center",
               }}
             >
-              <Typography variant='h4'>JobTracker</Typography>
-              <br />
+              <Typography variant='h5' style={{ marginBottom: 10 }}>
+                JobTracker
+              </Typography>
+
               <Typography variant='body2'>
                 A platform that allows recent graduates from Wyncode Academy to
                 track job applications, store resume's, and monitor follow ups.
