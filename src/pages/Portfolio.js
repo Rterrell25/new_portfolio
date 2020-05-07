@@ -74,7 +74,7 @@ const Portfolio = () => {
           spacing={2}
           className={classes.grid}
           alignItems='center'
-          style={{ height: "100vh", visibility: ready ? "visible" : "hidden" }}
+          style={{ height: "100vh" }}
         >
           <Grid
             item
@@ -89,6 +89,7 @@ const Portfolio = () => {
               marginLeft: "auto",
               marginRight: "auto",
               width: "100%",
+              visibility: ready ? "visible" : "hidden",
             }}
           >
             <Img
@@ -185,6 +186,7 @@ const Portfolio = () => {
               marginLeft: "auto",
               marginRight: "auto",
               width: "100%",
+              visibility: ready ? "visible" : "hidden",
             }}
           >
             <Img
@@ -281,6 +283,7 @@ const Portfolio = () => {
               marginLeft: "auto",
               marginRight: "auto",
               width: "100%",
+              visibility: ready ? "visible" : "hidden",
             }}
           >
             <Img
