@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react"
+import React, { useContext } from "react"
 import BarHop from "../images/BarHop.jpg"
 import Oddjobs from "../images/Oddjobs.png"
 import JobTracker from "../images/JobTracker.png"
@@ -9,6 +9,7 @@ import Img from "react-cool-img"
 import BarHopModal from "../components/BarHopModal"
 import OddjobsModal from "../components/OddjobsModal"
 import JobTrackerModal from "../components/JobTrackerModal"
+import { ReadyContext } from "../context/ReadyContext"
 
 // Material UI
 import Tooltip from "@material-ui/core/Tooltip"
@@ -57,16 +58,9 @@ const useStyles = makeStyles((theme) => ({
 }))
 
 const Portfolio = () => {
-  const [ready, setReady] = useState(false)
+  const { ready } = useContext(ReadyContext)
 
   const classes = useStyles()
-
-  useEffect(() => {
-    const _TIMER = setTimeout(() => {
-      setReady(true)
-      clearTimeout(_TIMER)
-    }, 80)
-  }, [])
 
   return (
     <>
@@ -115,6 +109,7 @@ const Portfolio = () => {
               marginLeft: "auto",
               marginRight: "auto",
               width: "100%",
+              visibility: ready ? "visible" : "hidden",
             }}
           >
             <Container
@@ -122,6 +117,7 @@ const Portfolio = () => {
               maxWidth='xs'
               style={{
                 textAlign: "center",
+                visibility: ready ? "visible" : "hidden",
               }}
             >
               <Typography
@@ -143,7 +139,10 @@ const Portfolio = () => {
                 JavaScript, and the Yelp API .
               </Typography>
               <br />
-              <Box className={classes.alumniChips}>
+              <Box
+                className={classes.alumniChips}
+                style={{ visibility: ready ? "visible" : "hidden" }}
+              >
                 <Tooltip
                   title='Please Note: Hosted on free tier of Heroku, site takes a few minutes to load'
                   aria-label='add'
@@ -219,6 +218,7 @@ const Portfolio = () => {
               marginLeft: "auto",
               marginRight: "auto",
               width: "100%",
+              visibility: ready ? "visible" : "hidden",
             }}
           >
             <Container
@@ -226,6 +226,7 @@ const Portfolio = () => {
               maxWidth='xs'
               style={{
                 textAlign: "center",
+                visibility: ready ? "visible" : "hidden",
               }}
             >
               <Typography
@@ -247,7 +248,10 @@ const Portfolio = () => {
                 Integration and Google Maps API.
               </Typography>
               <br />
-              <Box className={classes.alumniChips}>
+              <Box
+                className={classes.alumniChips}
+                style={{ visibility: ready ? "visible" : "hidden" }}
+              >
                 <Tooltip
                   title='Please Note: Hosted on free tier of Heroku, site takes a few minutes to load'
                   aria-label='add'
@@ -323,6 +327,7 @@ const Portfolio = () => {
               marginLeft: "auto",
               marginRight: "auto",
               width: "100%",
+              visibility: ready ? "visible" : "hidden",
             }}
           >
             <Container
@@ -330,6 +335,7 @@ const Portfolio = () => {
               maxWidth='xs'
               style={{
                 textAlign: "center",
+                visibility: ready ? "visible" : "hidden",
               }}
             >
               <Typography
@@ -352,7 +358,10 @@ const Portfolio = () => {
                 Google Firestore.
               </Typography>
               <br />
-              <Box className={classes.alumniChips}>
+              <Box
+                className={classes.alumniChips}
+                style={{ visibility: ready ? "visible" : "hidden" }}
+              >
                 <a
                   rel='noopener noreferrer'
                   href='https://jobtracker.netlify.app/'

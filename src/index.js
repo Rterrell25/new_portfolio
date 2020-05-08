@@ -2,12 +2,15 @@ import React from "react"
 import ReactDOM from "react-dom"
 import App from "./App"
 import { GithubProvider } from "./context/GithubContext"
+import { ReadyProvider } from "./context/ReadyContext"
 import * as serviceWorker from "./serviceWorker"
 
 ReactDOM.render(
-  <GithubProvider>
-    <App />
-  </GithubProvider>,
+  <ReadyProvider>
+    <GithubProvider>
+      <App />
+    </GithubProvider>
+  </ReadyProvider>,
 
   document.getElementById("root")
 )

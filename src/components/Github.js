@@ -7,7 +7,6 @@ const Github = (INITIAL) => {
       .get(`https://api.github.com/users/rterrell25/repos?`)
       .then((res) => {
         setData(res.data)
-        console.log(res.data)
       })
       .catch((err) => console.log(err))
   }, [setData])
