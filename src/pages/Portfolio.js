@@ -37,7 +37,30 @@ const useStyles = makeStyles((theme) => ({
     display: "block",
     marginLeft: "auto",
     marginRight: "auto",
+    // normal
+    height: 390,
+    width: 622,
     width: "100%",
+    "@media (max-width: 1300px)": {
+      height: 366,
+      width: 586,
+    },
+    "@media (max-width: 1200px)": {
+      height: 332,
+      width: 532,
+    },
+    "@media (max-width: 1150px)": {
+      height: 300,
+      width: 500,
+    },
+    "@media (max-width: 1100px)": {
+      height: 280,
+      width: 480,
+    },
+    "@media (max-width: 959px)": {
+      width: "100%",
+      height: "auto",
+    },
   },
   alumniChips: {
     display: "flex",
