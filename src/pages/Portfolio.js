@@ -40,7 +40,7 @@ const useStyles = makeStyles((theme) => ({
     // normal
     height: 390,
     width: 622,
-    width: "100%",
+
     "@media (max-width: 1300px)": {
       height: 366,
       width: 586,
