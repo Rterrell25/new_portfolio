@@ -1,4 +1,4 @@
-import React, { useContext } from "react"
+import React from "react"
 import BarHop from "../images/BarHop.jpg"
 import Oddjobs from "../images/Oddjobs.png"
 import JobTracker from "../images/JobTracker.png"
@@ -9,7 +9,6 @@ import Img from "react-cool-img"
 import BarHopModal from "../components/BarHopModal"
 import OddjobsModal from "../components/OddjobsModal"
 import JobTrackerModal from "../components/JobTrackerModal"
-import { ReadyContext } from "../context/ReadyContext"
 
 // Material UI
 import Tooltip from "@material-ui/core/Tooltip"
@@ -81,8 +80,6 @@ const useStyles = makeStyles((theme) => ({
 }))
 
 const Portfolio = () => {
-  const { ready } = useContext(ReadyContext)
-
   const classes = useStyles()
 
   return (
@@ -131,7 +128,6 @@ const Portfolio = () => {
               marginLeft: "auto",
               marginRight: "auto",
               width: "100%",
-              visibility: ready ? "visible" : "hidden",
             }}
           >
             <Container
@@ -139,32 +135,24 @@ const Portfolio = () => {
               maxWidth='xs'
               style={{
                 textAlign: "center",
-                visibility: ready ? "visible" : "hidden",
               }}
             >
               <Typography
                 variant='h5'
                 style={{
                   marginBottom: 10,
-                  visibility: ready ? "visible" : "hidden",
                 }}
               >
                 Bar Hop
               </Typography>
 
-              <Typography
-                variant='body2'
-                style={{ visibility: ready ? "visible" : "hidden" }}
-              >
+              <Typography variant='body2'>
                 A platform that provides users with the top drinking places
                 based on their location. Technologies used: ReactJS, NodeJS,
                 JavaScript, and the Yelp API .
               </Typography>
               <br />
-              <Box
-                className={classes.alumniChips}
-                style={{ visibility: ready ? "visible" : "hidden" }}
-              >
+              <Box className={classes.alumniChips}>
                 <Tooltip
                   title='Please Note: Hosted on free tier of Heroku, site takes a few minutes to load'
                   aria-label='add'
@@ -239,7 +227,6 @@ const Portfolio = () => {
               marginLeft: "auto",
               marginRight: "auto",
               width: "100%",
-              visibility: ready ? "visible" : "hidden",
             }}
           >
             <Container
@@ -247,32 +234,24 @@ const Portfolio = () => {
               maxWidth='xs'
               style={{
                 textAlign: "center",
-                visibility: ready ? "visible" : "hidden",
               }}
             >
               <Typography
                 variant='h5'
                 style={{
                   marginBottom: 10,
-                  visibility: ready ? "visible" : "hidden",
                 }}
               >
                 Odd Jobs
               </Typography>
 
-              <Typography
-                variant='body2'
-                style={{ visibility: ready ? "visible" : "hidden" }}
-              >
+              <Typography variant='body2'>
                 A platform that pairs consumers with reliable contractors.
                 Technologies used: ReactJS, Ruby on Rails, PostgreSQL, Calendly
                 Integration and Google Maps API.
               </Typography>
               <br />
-              <Box
-                className={classes.alumniChips}
-                style={{ visibility: ready ? "visible" : "hidden" }}
-              >
+              <Box className={classes.alumniChips}>
                 <Tooltip
                   title='Please Note: Hosted on free tier of Heroku, site takes a few minutes to load'
                   aria-label='add'
@@ -347,7 +326,6 @@ const Portfolio = () => {
               marginLeft: "auto",
               marginRight: "auto",
               width: "100%",
-              visibility: ready ? "visible" : "hidden",
             }}
           >
             <Container
@@ -355,33 +333,25 @@ const Portfolio = () => {
               maxWidth='xs'
               style={{
                 textAlign: "center",
-                visibility: ready ? "visible" : "hidden",
               }}
             >
               <Typography
                 variant='h5'
                 style={{
                   marginBottom: 10,
-                  visibility: ready ? "visible" : "hidden",
                 }}
               >
                 JobTracker
               </Typography>
 
-              <Typography
-                variant='body2'
-                style={{ visibility: ready ? "visible" : "hidden" }}
-              >
+              <Typography variant='body2'>
                 A platform that allows recent graduates from Wyncode Academy to
                 track job applications, store resume's, and monitor follow ups.
                 Technologies used: ReactJS, NodeJS, Google Cloud Functions, and
                 Google Firestore.
               </Typography>
               <br />
-              <Box
-                className={classes.alumniChips}
-                style={{ visibility: ready ? "visible" : "hidden" }}
-              >
+              <Box className={classes.alumniChips}>
                 <a
                   rel='noopener noreferrer'
                   href='https://jobtracker.netlify.app/'

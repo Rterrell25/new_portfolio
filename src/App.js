@@ -1,8 +1,7 @@
-import React, { Suspense, useEffect, useContext } from "react"
+import React, { Suspense } from "react"
 import axios from "axios"
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom"
 import "./App.css"
-import { ReadyContext } from "./context/ReadyContext"
 
 // components
 import Navbar from "./components/Navbar"
@@ -26,13 +25,7 @@ const Home = React.lazy(() => import("./pages/Home"))
 axios.defaults.baseURL = `https://us-central1-simple-contact-form-96bcb.cloudfunctions.net/api`
 
 const App = () => {
-  const { setReady } = useContext(ReadyContext)
   const theme = createMuiTheme(MainTheme)
-
-  useEffect(() => {
-    console.log("i ran")
-    setReady(true)
-  }, [setReady])
 
   return (
     <MuiThemeProvider theme={theme}>
