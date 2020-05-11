@@ -115,7 +115,6 @@ const Portfolio = () => {
               src={BarHop}
               alt='barhop'
               className={classes.image}
-              cache={false}
             />
           </Grid>
 
@@ -223,7 +222,6 @@ const Portfolio = () => {
               placeholder={OddjobsPlace}
               src={Oddjobs}
               alt='oddjobs'
-              cache={false}
               className={classes.image}
             />
           </Grid>
@@ -331,7 +329,6 @@ const Portfolio = () => {
             <Img
               placeholder={JobTrackerPlace}
               src={JobTracker}
-              cache={false}
               alt='JobTracker'
               className={classes.image}
             />
