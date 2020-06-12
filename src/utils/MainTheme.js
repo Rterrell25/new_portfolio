@@ -1,60 +1,63 @@
-import { createMuiTheme } from "@material-ui/core/styles"
+import { createMuiTheme } from '@material-ui/core/styles'
 
-const PublicSans = {
-  fontFamily: "Public Sans', sans-serif",
+const Dosis = {
+  fontFamily: 'Dosis, sans-serif;'
+}
+const OpenSans = {
+  fontFamily: 'Public Sans, sans-serif;'
 }
 
-const BLACK = "#000000"
-const DARK_GREY = "#373733"
+const BLACK = '#000000'
+const DARK_GREY = '#373733'
 
 const MainTheme = createMuiTheme({
   palette: {
     background: {
-      default: "rgb(245, 245, 245)",
+      default: 'rgb(245, 245, 245)'
     },
     text: {
       primary: BLACK,
-      secondary: DARK_GREY,
+      secondary: DARK_GREY
     },
     primary: {
       // light: will be calculated from palette.primary.main,
-      main: "#0B54C1",
+      main: '#00B0EE'
       // dark: will be calculated from palette.primary.main,
       // contrastText: will be calculated to contrast with palette.primary.main
     },
     secondary: {
-      main: "#E10098",
+      main: '#E10098'
       // dark: will be calculated from palette.secondary.main,
-    },
+    }
   },
   typography: {
     h1: {
-      ...PublicSans,
+      ...Dosis
     },
     h2: {
-      ...PublicSans,
+      ...Dosis
     },
     h3: {
-      ...PublicSans,
+      ...Dosis
     },
     h4: {
-      ...PublicSans,
+      ...Dosis
     },
     h5: {
-      ...PublicSans,
+      ...Dosis
     },
     h6: {
-      ...PublicSans,
+      ...Dosis
     },
     body1: {
-      ...PublicSans,
+      ...OpenSans
     },
     body2: {
-      ...PublicSans,
+      ...OpenSans
     },
     subtitle1: {
-      ...PublicSans,
-    },
-  },
+      ...OpenSans
+    }
+  }
 })
 export default MainTheme
