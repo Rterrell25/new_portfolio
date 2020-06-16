@@ -1,19 +1,17 @@
 import React from 'react'
-import Hero from '../images/Hero.png'
+import ScrollAnimation from 'react-animate-on-scroll'
 import Resume from '../Resume/Resume.pdf'
 import { Link } from 'react-scroll'
 import Test from '../components/Test'
+import ContactLink from '../utils/ContactLink'
 
 // MUI
-import LinkedInIcon from '@material-ui/icons/LinkedIn'
-import GitHubIcon from '@material-ui/icons/GitHub'
-import Divider from '@material-ui/core/Divider'
+import Grid from '@material-ui/core/Grid'
 import Typography from '@material-ui/core/Typography'
 import Container from '@material-ui/core/Container'
 import Box from '@material-ui/core/Box'
 import { makeStyles } from '@material-ui/core/styles'
 import Button from '@material-ui/core/Button'
-import Chip from '@material-ui/core/Chip'
 
 const useStyles = makeStyles(theme => ({
   background: {
@@ -23,6 +21,13 @@ const useStyles = makeStyles(theme => ({
     width: '100%',
     margin: 0,
     overflow: 'hidden'
+  },
+  height: {
+    height: 250,
+
+    '@media (max-width: 600px)': {
+      height: 500
+    }
   },
   overlay: {
     marginTop: 250,
@@ -86,7 +91,11 @@ const useStyles = makeStyles(theme => ({
     padding: 10
   },
   grid: {
-    padding: 0
+    padding: 0,
+    display: 'block',
+    marginLeft: 'auto',
+    marginRight: 'auto',
+    width: '100%'
   },
   container: {
     width: '80%'
@@ -123,21 +132,26 @@ const Home = () => {
                 </Link>{' '}
                 to learn about my background and follow me on social media
               </Typography>
-              <a href={Resume} download="Robert Terrell's Resume">
-                <Button
-                  variant='contained'
-                  color='primary'
-                  disableElevation
-                  className={classes.submit}
-                  style={{
-                    display: 'block',
-                    marginLeft: 'auto',
-                    marginRight: 'auto'
-                  }}
+
+              <Button
+                variant='contained'
+                disableElevation
+                className={classes.submit}
+                style={{
+                  display: 'block',
+                  marginLeft: 'auto',
+                  marginRight: 'auto',
+                  backgroundColor: '#00B0EE'
+                }}
+              >
+                <a
+                  href={Resume}
+                  download="Robert Terrell's Resume"
+                  style={{ color: '#FFFFFF' }}
                 >
                   Download Resume
-                </Button>
-              </a>
+                </a>
+              </Button>
             </Container>
           </div>
           <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320'>
@@ -157,7 +171,7 @@ const Home = () => {
             variant='h3'
             style={{ textAlign: 'center', marginBottom: 35 }}
           >
-            My Services
+            My Specialties
           </Typography>
           <br />
           <Test />
@@ -165,8 +179,93 @@ const Home = () => {
       </Box>
 
       <br />
-      <Container style={{ marginBottom: 100 }}>
+      <Grid
+        className={classes.height}
+        id='background'
+        container
+        alignItems='center'
+        style={{ marginBottom: 50, marginTop: 50 }}
+      >
+        <Grid item sm={6} md={3} lg={3} xs={12} className={classes.grid}>
+          <ScrollAnimation animateOnce={true} delay={100} animateIn='fadeInUp'>
+            <Typography variant='h4' style={{ textAlign: 'center' }}>
+              500k+
+            </Typography>
+            <Typography variant='body2' style={{ textAlign: 'center' }}>
+              Lines of Code Written
+            </Typography>
+          </ScrollAnimation>
+        </Grid>
+        <Grid item sm={6} md={3} lg={3} xs={12} className={classes.grid}>
+          <ScrollAnimation animateOnce={true} delay={200} animateIn='fadeInUp'>
+            <Typography variant='h4' style={{ textAlign: 'center' }}>
+              <a
+                href='https://github.com/Rterrell25'
+                rel='noopener noreferrer'
+                target='_blank'
+                style={{ color: '#FFFFFF' }}
+              >
+                GitHub
+              </a>
+            </Typography>
+
+            <Typography variant='body2' style={{ textAlign: 'center' }}>
+              <a
+                href='https://github.com/Rterrell25'
+                rel='noopener noreferrer'
+                target='_blank'
+                style={{ color: '#FFFFFF' }}
+              >
+                Click Here to Visit
+              </a>
+            </Typography>
+          </ScrollAnimation>
+        </Grid>
+        <Grid item sm={6} md={3} lg={3} xs={12} className={classes.grid}>
+          <ScrollAnimation animateOnce={true} delay={300} animateIn='fadeInUp'>
+            <Typography variant='h4' style={{ textAlign: 'center' }}>
+              <a
+                href='https://www.linkedin.com/in/rterrell25/'
+                rel='noopener noreferrer'
+                target='_blank'
+                style={{ color: '#FFFFFF' }}
+              >
+                LinkedIn
+              </a>
+            </Typography>
+            <Typography variant='body2' style={{ textAlign: 'center' }}>
+              <a
+                href='https://www.linkedin.com/in/rterrell25/'
+                rel='noopener noreferrer'
+                target='_blank'
+                style={{ color: '#FFFFFF' }}
+              >
+                Click Here to Visit
+              </a>
+            </Typography>
+          </ScrollAnimation>
+        </Grid>
+        <Grid item sm={6} md={3} lg={3} xs={12} className={classes.grid}>
+          <ScrollAnimation animateOnce={true} delay={400} animateIn='fadeInUp'>
+            <ContactLink />
+          </ScrollAnimation>
+        </Grid>
+      </Grid>
+      <Container style={{ marginBottom: 100, marginTop: 40 }}>
         <br />
+
+        <Typography variant='h6' style={{ textAlign: 'center' }}>
+          A Brief Background...
+        </Typography>
+        <Typography
+          variant='h3'
+          style={{ textAlign: 'center', marginBottom: 25 }}
+        >
+          About Me
+        </Typography>
+
+        <br />
+
         <Typography
           variant='h4'
           className={classes.heroFont}
@@ -216,34 +315,6 @@ const Home = () => {
           spectrum and working on ambitious projects with positive people.
         </Typography>
         <br />
-        <Box className={classes.alumniChips}>
-          <a
-            rel='noopener noreferrer'
-            href='https://github.com/Rterrell25'
-            target='_blank'
-            style={{ margin: '1%' }}
-          >
-            <Chip
-              icon={<GitHubIcon />}
-              label='GitHub'
-              clickable
-              color='primary'
-            />
-          </a>
-          <a
-            rel='noopener noreferrer'
-            href='https://www.linkedin.com/in/rterrell25/'
-            target='_blank'
-            style={{ margin: '1%' }}
-          >
-            <Chip
-              icon={<LinkedInIcon />}
-              label='LinkedIn'
-              clickable
-              color='primary'
-            />
-          </a>
-        </Box>
       </Container>
     </>
   )

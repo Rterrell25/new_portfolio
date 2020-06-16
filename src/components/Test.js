@@ -12,7 +12,6 @@ import Typography from '@material-ui/core/Typography'
 import ArrowBackIosIcon from '@material-ui/icons/ArrowBackIos'
 import ArrowForwardIosIcon from '@material-ui/icons/ArrowForwardIos'
 import SpeedIcon from '@material-ui/icons/Speed'
-import { Grid } from '@material-ui/core'
 
 const useStyles = makeStyles(theme => ({
   item: {
