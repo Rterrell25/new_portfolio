@@ -1,66 +1,66 @@
-import React, { useState, useContext } from "react"
+import React, { useState, useContext } from 'react'
 
 // components
-import SelectStatus from "../components/SelectStatus"
-import RepoCard from "../components/RepoCard"
+import SelectStatus from '../components/SelectStatus'
+import RepoCard from '../components/RepoCard'
 
 // Context
-import { GithubContext } from "../context/GithubContext"
+import { GithubContext } from '../context/GithubContext'
 
 // Material UI Stuff
-import TextField from "@material-ui/core/TextField"
-import CardContent from "@material-ui/core/CardContent"
-import Button from "@material-ui/core/Button"
-import Card from "@material-ui/core/Card"
-import Grid from "@material-ui/core/Grid"
-import { makeStyles } from "@material-ui/core/styles"
+import TextField from '@material-ui/core/TextField'
+import CardContent from '@material-ui/core/CardContent'
+import Button from '@material-ui/core/Button'
+import Card from '@material-ui/core/Card'
+import Grid from '@material-ui/core/Grid'
+import { makeStyles } from '@material-ui/core/styles'
 
-import Container from "@material-ui/core/Container"
+import Container from '@material-ui/core/Container'
 
 // context
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles(theme => ({
   cardGrid: {
     paddingTop: theme.spacing(8),
-    paddingBottom: theme.spacing(8),
+    paddingBottom: theme.spacing(8)
   },
   card: {
-    display: "flex",
+    display: 'flex',
     marginBottom: 10,
-    minHeight: 90,
+    minHeight: 90
   },
   form: {
-    display: "flex",
-    alignItems: "center",
-    width: "100%",
+    display: 'flex',
+    alignItems: 'center',
+    width: '100%'
   },
   content: {
-    display: "flex",
-    alignItems: "center",
-    width: "100%",
-    justifyContent: "space-between",
+    display: 'flex',
+    alignItems: 'center',
+    width: '100%',
+    justifyContent: 'space-between'
   },
 
   jobField: {
     margin: 0,
-    padding: 0,
+    padding: 0
   },
   grid: {
-    padding: 0,
+    padding: 0
   },
 
   dashboardContainer: {
     marginTop: 70,
-    padding: 10,
+    padding: 10
   },
   loading: {
-    textAlign: "center",
-  },
+    textAlign: 'center'
+  }
 }))
 
 const INITIAL_STATE = {
-  language: "All",
-  search: "",
+  language: 'All',
+  search: ''
 }
 
 const Profile = () => {
@@ -87,7 +87,7 @@ const Profile = () => {
       })
   }
 
-  const handleInputChange = (field) => (e) => {
+  const handleInputChange = field => e => {
     setFormData({ ...formData, [field]: e.target.value })
   }
 
@@ -96,7 +96,7 @@ const Profile = () => {
     <>
       <div style={{ marginTop: 85, marginBottom: 85 }}>
         <Container className={classes.dashboardContainer}>
-          <Card className={classes.card} style={{ width: "100%" }}>
+          <Card className={classes.card} style={{ width: '100%' }}>
             <CardContent className={classes.content}>
               <div className={classes.form}>
                 <Grid
@@ -120,18 +120,17 @@ const Profile = () => {
                       name='search'
                       label='Search by Title'
                       placeholder='Search by Title'
-                      onChange={handleInputChange("search")}
+                      onChange={handleInputChange('search')}
                       value={formData.search}
                     />
                   </Grid>
                   <Grid item sm={2} xs={12} className={classes.grid}>
                     <Button
-                      fullWidth
                       variant='contained'
                       color='primary'
                       onClick={handleUpdated}
                     >
-                      Updated {updated ? "(oldest)" : "(newest)"}
+                      Updated {updated ? '(oldest)' : '(newest)'}
                     </Button>
                   </Grid>
                   <Grid item sm={2} xs={12} className={classes.grid}>
@@ -141,7 +140,7 @@ const Profile = () => {
                       color='primary'
                       onClick={handleCreated}
                     >
-                      Created {created ? "(oldest)" : "(newest)"}
+                      Created {created ? '(oldest)' : '(newest)'}
                     </Button>
                   </Grid>
                 </Grid>
@@ -154,22 +153,22 @@ const Profile = () => {
         ) : (
           <Container style={{ padding: 10 }}>
             {!data ? (
-              <div style={{ placeItems: "center" }}>Loading...</div>
+              <div style={{ placeItems: 'center' }}>Loading...</div>
             ) : (
               <Grid container alignItems='center' spacing={4}>
                 {data &&
                   data
-                    .filter((data) => {
-                      if (formData.language === "All") return true
+                    .filter(data => {
+                      if (formData.language === 'All') return true
                       return data.language === formData.language
                     })
-                    .filter((data) => {
-                      if (formData.search === "") return true
+                    .filter(data => {
+                      if (formData.search === '') return true
                       return (data.name + data.language)
                         .toLowerCase()
                         .includes(formData.search.toLowerCase())
                     })
-                    .map((user) => <RepoCard key={user.id} user={user} />)}
+                    .map(user => <RepoCard key={user.id} user={user} />)}
               </Grid>
             )}
           </Container>
