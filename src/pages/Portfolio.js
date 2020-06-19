@@ -1,82 +1,82 @@
-import React from "react"
-import BarHop from "../images/BarHop.jpg"
-import Oddjobs from "../images/Oddjobs.png"
-import JobTracker from "../images/JobTracker.png"
-import BarhopPlace from "../images/BarhopPlace.jpg"
-import OddjobsPlace from "../images/OddjobsPlace.png"
-import JobTrackerPlace from "../images/JobTrackerPlace.png"
-import Img from "react-cool-img"
-import BarHopModal from "../components/BarHopModal"
-import OddjobsModal from "../components/OddjobsModal"
-import JobTrackerModal from "../components/JobTrackerModal"
+import React from 'react'
+import BarHop from '../images/BarHop.jpg'
+import Oddjobs from '../images/Oddjobs.png'
+import JobTracker from '../images/JobTracker.png'
+import BarhopPlace from '../images/BarhopPlace.jpg'
+import OddjobsPlace from '../images/OddjobsPlace.png'
+import JobTrackerPlace from '../images/JobTrackerPlace.png'
+import Img from 'react-cool-img'
+import BarHopModal from '../components/BarHopModal'
+import OddjobsModal from '../components/OddjobsModal'
+import JobTrackerModal from '../components/JobTrackerModal'
 
 // Material UI
-import Tooltip from "@material-ui/core/Tooltip"
-import Grid from "@material-ui/core/Grid"
-import { makeStyles } from "@material-ui/core/styles"
-import Typography from "@material-ui/core/Typography"
-import Container from "@material-ui/core/Container"
-import Chip from "@material-ui/core/Chip"
-import Box from "@material-ui/core/Box"
-import GitHubIcon from "@material-ui/icons/GitHub"
-import LanguageIcon from "@material-ui/icons/Language"
-import Divider from "@material-ui/core/Divider"
+import Tooltip from '@material-ui/core/Tooltip'
+import Grid from '@material-ui/core/Grid'
+import { makeStyles } from '@material-ui/core/styles'
+import Typography from '@material-ui/core/Typography'
+import Container from '@material-ui/core/Container'
+import Chip from '@material-ui/core/Chip'
+import Box from '@material-ui/core/Box'
+import GitHubIcon from '@material-ui/icons/GitHub'
+import LanguageIcon from '@material-ui/icons/Language'
+import Divider from '@material-ui/core/Divider'
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles(theme => ({
   grid: {
-    padding: 0,
+    padding: 0
   },
 
   dashboardContainer: {
     marginTop: 90,
     padding: 10,
-    marginBottom: 40,
+    marginBottom: 40
   },
   image: {
-    display: "block",
-    marginLeft: "auto",
-    marginRight: "auto",
+    display: 'block',
+    marginLeft: 'auto',
+    marginRight: 'auto',
     // normal
     height: 390,
     width: 622,
 
-    "@media (max-width: 1300px)": {
+    '@media (max-width: 1300px)': {
       height: 366,
-      width: 586,
+      width: 586
     },
-    "@media (max-width: 1200px)": {
+    '@media (max-width: 1200px)': {
       height: 332,
-      width: 532,
+      width: 532
     },
-    "@media (max-width: 1150px)": {
+    '@media (max-width: 1150px)': {
       height: 300,
-      width: 500,
+      width: 500
     },
-    "@media (max-width: 1100px)": {
+    '@media (max-width: 1100px)': {
       height: 280,
-      width: 480,
+      width: 480
     },
-    "@media (max-width: 959px)": {
-      width: "100%",
-      height: "auto",
-    },
+    '@media (max-width: 959px)': {
+      width: '100%',
+      height: 'auto'
+    }
   },
   alumniChips: {
-    display: "flex",
-    justifyContent: "center",
+    display: 'flex',
+    justifyContent: 'center'
   },
 
   hide: {
-    "@media (max-width: 1024px)": {
-      display: "none",
+    '@media (max-width: 1024px)': {
+      display: 'none'
     },
-    "@media (max-width: 700px)": {
-      display: "none",
+    '@media (max-width: 700px)': {
+      display: 'none'
     },
-    "@media (max-width: 600px)": {
-      display: "none",
-    },
-  },
+    '@media (max-width: 600px)': {
+      display: 'none'
+    }
+  }
 }))
 
 const Portfolio = () => {
@@ -90,7 +90,7 @@ const Portfolio = () => {
           spacing={2}
           className={classes.grid}
           alignItems='center'
-          style={{ height: "100vh" }}
+          style={{ height: '100vh' }}
         >
           <Grid
             item
@@ -101,10 +101,10 @@ const Portfolio = () => {
             xl={6}
             className={classes.grid}
             style={{
-              display: "block",
-              marginLeft: "auto",
-              marginRight: "auto",
-              width: "100%",
+              display: 'block',
+              marginLeft: 'auto',
+              marginRight: 'auto',
+              width: '100%'
             }}
           >
             <Img
@@ -125,23 +125,23 @@ const Portfolio = () => {
             xl={6}
             className={classes.grid}
             style={{
-              display: "block",
-              marginLeft: "auto",
-              marginRight: "auto",
-              width: "100%",
+              display: 'block',
+              marginLeft: 'auto',
+              marginRight: 'auto',
+              width: '100%'
             }}
           >
             <Container
               component='main'
               maxWidth='xs'
               style={{
-                textAlign: "center",
+                textAlign: 'center'
               }}
             >
               <Typography
                 variant='h5'
                 style={{
-                  marginBottom: 10,
+                  marginBottom: 10
                 }}
               >
                 Bar Hop
@@ -162,7 +162,7 @@ const Portfolio = () => {
                     rel='noopener noreferrer'
                     href='https://barhop-wyncode.herokuapp.com/'
                     target='_blank'
-                    style={{ margin: "1%" }}
+                    style={{ margin: '1%' }}
                   >
                     <Chip
                       icon={<LanguageIcon />}
@@ -176,7 +176,7 @@ const Portfolio = () => {
                   rel='noopener noreferrer'
                   href='https://github.com/Rterrell25/Bar_Hop_React_App'
                   target='_blank'
-                  style={{ margin: "1%" }}
+                  style={{ margin: '1%' }}
                 >
                   <Chip
                     icon={<GitHubIcon />}
@@ -190,7 +190,7 @@ const Portfolio = () => {
             </Container>
           </Grid>
 
-          <Divider style={{ width: "100%", marginTop: 30, marginBottom: 30 }} />
+          <Divider style={{ width: '100%', marginTop: 30, marginBottom: 30 }} />
 
           <Grid
             item
@@ -201,10 +201,10 @@ const Portfolio = () => {
             xl={6}
             className={classes.grid}
             style={{
-              display: "block",
-              marginLeft: "auto",
-              marginRight: "auto",
-              width: "100%",
+              display: 'block',
+              marginLeft: 'auto',
+              marginRight: 'auto',
+              width: '100%'
             }}
           >
             <Img
@@ -225,23 +225,23 @@ const Portfolio = () => {
             xl={6}
             className={classes.grid}
             style={{
-              display: "block",
-              marginLeft: "auto",
-              marginRight: "auto",
-              width: "100%",
+              display: 'block',
+              marginLeft: 'auto',
+              marginRight: 'auto',
+              width: '100%'
             }}
           >
             <Container
               component='main'
               maxWidth='xs'
               style={{
-                textAlign: "center",
+                textAlign: 'center'
               }}
             >
               <Typography
                 variant='h5'
                 style={{
-                  marginBottom: 10,
+                  marginBottom: 10
                 }}
               >
                 Odd Jobs
@@ -262,7 +262,7 @@ const Portfolio = () => {
                     rel='noopener noreferrer'
                     href='https://oddjobs-react.herokuapp.com/'
                     target='_blank'
-                    style={{ margin: "1%" }}
+                    style={{ margin: '1%' }}
                   >
                     <Chip
                       icon={<LanguageIcon />}
@@ -276,7 +276,7 @@ const Portfolio = () => {
                   rel='noopener noreferrer'
                   href='https://github.com/Rterrell25/Oddjobs_React_App'
                   target='_blank'
-                  style={{ margin: "1%" }}
+                  style={{ margin: '1%' }}
                 >
                   <Chip
                     icon={<GitHubIcon />}
@@ -290,7 +290,7 @@ const Portfolio = () => {
             </Container>
           </Grid>
           <br />
-          <Divider style={{ width: "100%", marginTop: 30, marginBottom: 30 }} />
+          <Divider style={{ width: '100%', marginTop: 30, marginBottom: 30 }} />
           <br />
           <Grid
             item
@@ -301,10 +301,10 @@ const Portfolio = () => {
             xl={6}
             className={classes.grid}
             style={{
-              display: "block",
-              marginLeft: "auto",
-              marginRight: "auto",
-              width: "100%",
+              display: 'block',
+              marginLeft: 'auto',
+              marginRight: 'auto',
+              width: '100%'
             }}
           >
             <Img
@@ -325,23 +325,23 @@ const Portfolio = () => {
             xl={6}
             className={classes.grid}
             style={{
-              display: "block",
-              marginLeft: "auto",
-              marginRight: "auto",
-              width: "100%",
+              display: 'block',
+              marginLeft: 'auto',
+              marginRight: 'auto',
+              width: '100%'
             }}
           >
             <Container
               component='main'
               maxWidth='xs'
               style={{
-                textAlign: "center",
+                textAlign: 'center'
               }}
             >
               <Typography
                 variant='h5'
                 style={{
-                  marginBottom: 10,
+                  marginBottom: 10
                 }}
               >
                 JobTracker
@@ -359,7 +359,7 @@ const Portfolio = () => {
                   rel='noopener noreferrer'
                   href='https://jobtracker.netlify.app/'
                   target='_blank'
-                  style={{ margin: "1%" }}
+                  style={{ margin: '1%' }}
                 >
                   <Chip
                     icon={<LanguageIcon />}
@@ -372,7 +372,7 @@ const Portfolio = () => {
                   rel='noopener noreferrer'
                   href='https://github.com/Rterrell25/JobTracker_Client'
                   target='_blank'
-                  style={{ margin: "1%" }}
+                  style={{ margin: '1%' }}
                 >
                   <Chip
                     icon={<GitHubIcon />}
