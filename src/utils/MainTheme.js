@@ -21,7 +21,7 @@ const MainTheme = createMuiTheme({
     },
     primary: {
       // light: will be calculated from palette.primary.main,
-      main: '#145BC4'
+      main: '#0B54C1'
       // dark: will be calculated from palette.primary.main,
       // contrastText: will be calculated to contrast with palette.primary.main
     },

@@ -1,17 +1,16 @@
 import React, { useState, useContext } from 'react'
 
 // components
-import SelectStatus from '../components/SelectStatus'
 import RepoCard from '../components/RepoCard'
 
 // Context
 import { GithubContext } from '../context/GithubContext'
 
 // Material UI Stuff
+import Typography from '@material-ui/core/Typography'
+
 import TextField from '@material-ui/core/TextField'
-import CardContent from '@material-ui/core/CardContent'
 import Button from '@material-ui/core/Button'
-import Card from '@material-ui/core/Card'
 import Grid from '@material-ui/core/Grid'
 import { makeStyles } from '@material-ui/core/styles'
 
@@ -24,21 +23,24 @@ const useStyles = makeStyles(theme => ({
     paddingTop: theme.spacing(8),
     paddingBottom: theme.spacing(8)
   },
+
   card: {
     display: 'flex',
     marginBottom: 10,
     minHeight: 90
   },
+  buttonGroup: {
+    '& > *': {
+      margin: theme.spacing(0.5)
+    }
+  },
   form: {
     display: 'flex',
     alignItems: 'center',
-    width: '100%'
-  },
-  content: {
-    display: 'flex',
-    alignItems: 'center',
-    width: '100%',
-    justifyContent: 'space-between'
+    marginBottom: 30,
+    '&:hover': {
+      backgroundColor: 'transparent'
+    }
   },
 
   jobField: {
@@ -50,7 +52,6 @@ const useStyles = makeStyles(theme => ({
   },
 
   dashboardContainer: {
-    marginTop: 70,
     padding: 10
   },
   loading: {
@@ -88,65 +89,160 @@ const Profile = () => {
   }
 
   const handleInputChange = field => e => {
-    setFormData({ ...formData, [field]: e.target.value })
+    console.log(field + ' ' + e.currentTarget.value)
+    setFormData({ ...formData, [field]: e.currentTarget.value })
   }
 
   const classes = useStyles()
   return (
     <>
-      <div style={{ marginTop: 85, marginBottom: 85 }}>
-        <Container className={classes.dashboardContainer}>
-          <Card className={classes.card} style={{ width: '100%' }}>
-            <CardContent className={classes.content}>
-              <div className={classes.form}>
-                <Grid
-                  container
-                  spacing={2}
-                  alignItems='center'
-                  justify='space-between'
-                >
-                  <Grid item sm={4} xs={12} className={classes.grid}>
-                    <SelectStatus
-                      language={formData.language}
-                      handleInputChange={handleInputChange}
-                    />
-                  </Grid>
-                  <Grid item sm={4} xs={12} className={classes.grid}>
-                    <TextField
-                      className={classes.jobField}
-                      margin='normal'
-                      fullWidth
-                      id='search'
-                      name='search'
-                      label='Search by Title'
-                      placeholder='Search by Title'
-                      onChange={handleInputChange('search')}
-                      value={formData.search}
-                    />
-                  </Grid>
-                  <Grid item sm={2} xs={12} className={classes.grid}>
-                    <Button
-                      variant='contained'
-                      color='primary'
-                      onClick={handleUpdated}
-                    >
-                      Updated {updated ? '(oldest)' : '(newest)'}
-                    </Button>
-                  </Grid>
-                  <Grid item sm={2} xs={12} className={classes.grid}>
-                    <Button
-                      fullWidth
-                      variant='contained'
-                      color='primary'
-                      onClick={handleCreated}
-                    >
-                      Created {created ? '(oldest)' : '(newest)'}
-                    </Button>
-                  </Grid>
-                </Grid>
-              </div>
-            </CardContent>
-          </Card>
+      <div style={{ marginTop: 150 }}>
+        <Container>
+          <Typography variant='h6' style={{ textAlign: 'center' }}>
+            Check Out My Code...
+          </Typography>
+          <Typography
+            variant='h3'
+            style={{ textAlign: 'center', marginBottom: 20 }}
+          >
+            My GitHub Repos
+          </Typography>
+          <br />
+        </Container>
+        <Container maxWidth='md' className={classes.dashboardContainer}>
+          <div className={classes.form}>
+            <TextField
+              style={{
+                borderBottom: 'solid 2px',
+                hover: 'none',
+                color: 'black'
+              }}
+              className={classes.jobField}
+              margin='normal'
+              fullWidth
+              id='search'
+              name='search'
+              placeholder='Search My GitHub Repos by Name or Language'
+              onChange={handleInputChange('search')}
+              value={formData.search}
+              InputProps={{
+                disableUnderline: true
+              }}
+            />
+          </div>
+
+          <Container
+            component='main'
+            maxWidth='md'
+            className={classes.buttonGroup}
+            style={{
+              textAlign: 'center'
+            }}
+          >
+            <Button
+              className={classes.hover}
+              disableElevation
+              variant='contained'
+              color='primary'
+              onClick={handleInputChange('language')}
+              value='All'
+              style={{
+                position: 'relative',
+                borderRadius: 0,
+                boxShadow: 'none',
+                fontWeight: 'bold',
+                color: '#FFFFFF'
+              }}
+            >
+              All
+            </Button>
+            <Button
+              className={classes.hover}
+              disableElevation
+              variant='contained'
+              color='primary'
+              onClick={handleCreated}
+              style={{
+                position: 'relative',
+                borderRadius: 0,
+                boxShadow: 'none',
+                fontWeight: 'bold',
+                color: '#FFFFFF'
+              }}
+            >
+              Created {created ? '(oldest)' : '(newest)'}
+            </Button>
+
+            <Button
+              className={classes.hover}
+              disableElevation
+              variant='contained'
+              color='primary'
+              onClick={handleInputChange('language')}
+              value='JavaScript'
+              style={{
+                position: 'relative',
+                borderRadius: 0,
+                boxShadow: 'none',
+                fontWeight: 'bold'
+              }}
+            >
+              JavaScript
+            </Button>
+            <Button
+              disableElevation
+              className={classes.hover}
+              variant='contained'
+              color='primary'
+              onClick={handleInputChange('language')}
+              value='Ruby'
+              style={{
+                position: 'relative',
+                borderRadius: 0,
+                boxShadow: 'none',
+                fontWeight: 'bold',
+                color: '#FFFFFF'
+              }}
+            >
+              Ruby
+            </Button>
+
+            <Button
+              className={classes.hover}
+              disableElevation
+              variant='contained'
+              color='primary'
+              onClick={handleUpdated}
+              style={{
+                position: 'relative',
+                borderRadius: 0,
+                boxShadow: 'none',
+                fontWeight: 'bold',
+                color: '#FFFFFF'
+              }}
+            >
+              Updated {updated ? '(oldest)' : '(newest)'}
+            </Button>
+            <Button
+              className={classes.hover}
+              variant='contained'
+              disableElevation
+              color='primary'
+              onClick={handleInputChange('language')}
+              value='HTML'
+              style={{
+                position: 'relative',
+                borderRadius: 0,
+                boxShadow: 'none',
+                fontWeight: 'bold',
+                color: '#FFFFFF'
+              }}
+            >
+              HTML
+            </Button>
+
+            <br />
+          </Container>
         </Container>
         {!data ? (
           <h1 className={classes.loading}>Initializing Repos...</h1>
