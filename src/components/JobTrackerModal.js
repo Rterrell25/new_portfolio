@@ -1,34 +1,34 @@
-import React from "react"
+import React from 'react'
 // Material UI
-import Backdrop from "@material-ui/core/Backdrop"
-import Fade from "@material-ui/core/Fade"
-import Modal from "@material-ui/core/Modal"
-import { makeStyles } from "@material-ui/core/styles"
-import Chip from "@material-ui/core/Chip"
-import PlayArrowIcon from "@material-ui/icons/PlayArrow"
+import Backdrop from '@material-ui/core/Backdrop'
+import Fade from '@material-ui/core/Fade'
+import Modal from '@material-ui/core/Modal'
+import { makeStyles } from '@material-ui/core/styles'
+import Chip from '@material-ui/core/Chip'
+import PlayArrowIcon from '@material-ui/icons/PlayArrow'
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles(theme => ({
   hide: {
-    "@media (max-width: 1024px)": {
-      display: "none",
+    '@media (max-width: 1024px)': {
+      display: 'none'
     },
-    "@media (max-width: 700px)": {
-      display: "none",
+    '@media (max-width: 700px)': {
+      display: 'none'
     },
-    "@media (max-width: 600px)": {
-      display: "none",
-    },
+    '@media (max-width: 600px)': {
+      display: 'none'
+    }
   },
 
   modal: {
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "center",
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center'
   },
   paper: {
-    width: "70%",
-    outline: "none",
-  },
+    width: '70%',
+    outline: 'none'
+  }
 }))
 
 const JobTrackerModal = () => {
@@ -46,13 +46,13 @@ const JobTrackerModal = () => {
   return (
     <>
       <Chip
-        icon={<PlayArrowIcon />}
+        icon={<PlayArrowIcon style={{ color: '#0064B3' }} />}
         label='Preview'
         onClick={handleOpen}
         clickable
         className={classes.hide}
-        color='primary'
-        style={{ margin: "1%" }}
+        color='secondary'
+        style={{ margin: '1%', color: '#0064B3' }}
       />
 
       <Modal
@@ -65,7 +65,7 @@ const JobTrackerModal = () => {
         closeAfterTransition
         BackdropComponent={Backdrop}
         BackdropProps={{
-          timeout: 500,
+          timeout: 500
         }}
       >
         <Fade in={open}>
@@ -73,7 +73,7 @@ const JobTrackerModal = () => {
             <video
               autoPlay
               style={{
-                width: "100%",
+                width: '100%'
               }}
             >
               <source src='http://daa792p138h1p.cloudfront.net/JobTracker720.mov' />

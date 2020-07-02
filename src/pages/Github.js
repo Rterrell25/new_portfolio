@@ -8,7 +8,7 @@ import { GithubContext } from '../context/GithubContext'
 
 // Material UI Stuff
 import Typography from '@material-ui/core/Typography'
-
+import useMediaQuery from '@material-ui/core/useMediaQuery'
 import TextField from '@material-ui/core/TextField'
 import Button from '@material-ui/core/Button'
 import Grid from '@material-ui/core/Grid'
@@ -30,6 +30,7 @@ const useStyles = makeStyles(theme => ({
     minHeight: 90
   },
   buttonGroup: {
+    marginBottom: 10,
     '& > *': {
       margin: theme.spacing(0.5)
     }
@@ -37,7 +38,7 @@ const useStyles = makeStyles(theme => ({
   form: {
     display: 'flex',
     alignItems: 'center',
-    marginBottom: 30,
+    marginBottom: 20,
     '&:hover': {
       backgroundColor: 'transparent'
     }
@@ -93,6 +94,8 @@ const Profile = () => {
     setFormData({ ...formData, [field]: e.currentTarget.value })
   }
 
+  const isSmallScreen = useMediaQuery('(max-width:805px)')
+
   const classes = useStyles()
   return (
     <>
@@ -109,6 +112,7 @@ const Profile = () => {
           </Typography>
           <br />
         </Container>
+
         <Container maxWidth='md' className={classes.dashboardContainer}>
           <div className={classes.form}>
             <TextField
@@ -130,119 +134,232 @@ const Profile = () => {
               }}
             />
           </div>
+          {isSmallScreen ? (
+            <Container
+              maxWidth='sm'
+              component='main'
+              className={classes.buttonGroup}
+              style={{
+                textAlign: 'center'
+              }}
+            >
+              <Button
+                className={classes.hover}
+                disableElevation
+                variant='contained'
+                color='primary'
+                onClick={handleInputChange('language')}
+                value='All'
+                style={{
+                  position: 'relative',
+                  borderRadius: 0,
+                  boxShadow: 'none',
+                  fontWeight: 'bold',
+                  color: '#FFFFFF'
+                }}
+              >
+                All
+              </Button>
+              <Button
+                className={classes.hover}
+                disableElevation
+                variant='contained'
+                color='primary'
+                onClick={handleCreated}
+                style={{
+                  position: 'relative',
+                  borderRadius: 0,
+                  boxShadow: 'none',
+                  fontWeight: 'bold',
+                  color: '#FFFFFF'
+                }}
+              >
+                Created {created ? '(oldest)' : '(newest)'}
+              </Button>
 
-          <Container
-            component='main'
-            maxWidth='md'
-            className={classes.buttonGroup}
-            style={{
-              textAlign: 'center'
-            }}
-          >
-            <Button
-              className={classes.hover}
-              disableElevation
-              variant='contained'
-              color='primary'
-              onClick={handleInputChange('language')}
-              value='All'
-              style={{
-                position: 'relative',
-                borderRadius: 0,
-                boxShadow: 'none',
-                fontWeight: 'bold',
-                color: '#FFFFFF'
-              }}
-            >
-              All
-            </Button>
-            <Button
-              className={classes.hover}
-              disableElevation
-              variant='contained'
-              color='primary'
-              onClick={handleCreated}
-              style={{
-                position: 'relative',
-                borderRadius: 0,
-                boxShadow: 'none',
-                fontWeight: 'bold',
-                color: '#FFFFFF'
-              }}
-            >
-              Created {created ? '(oldest)' : '(newest)'}
-            </Button>
+              <Button
+                className={classes.hover}
+                disableElevation
+                variant='contained'
+                color='primary'
+                onClick={handleInputChange('language')}
+                value='JavaScript'
+                style={{
+                  position: 'relative',
+                  borderRadius: 0,
+                  boxShadow: 'none',
+                  fontWeight: 'bold'
+                }}
+              >
+                JavaScript
+              </Button>
+              <Button
+                disableElevation
+                className={classes.hover}
+                variant='contained'
+                color='primary'
+                onClick={handleInputChange('language')}
+                value='Ruby'
+                style={{
+                  position: 'relative',
+                  borderRadius: 0,
+                  boxShadow: 'none',
+                  fontWeight: 'bold',
+                  color: '#FFFFFF'
+                }}
+              >
+                Ruby
+              </Button>
 
-            <Button
-              className={classes.hover}
-              disableElevation
-              variant='contained'
-              color='primary'
-              onClick={handleInputChange('language')}
-              value='JavaScript'
-              style={{
-                position: 'relative',
-                borderRadius: 0,
-                boxShadow: 'none',
-                fontWeight: 'bold'
-              }}
-            >
-              JavaScript
-            </Button>
-            <Button
-              disableElevation
-              className={classes.hover}
-              variant='contained'
-              color='primary'
-              onClick={handleInputChange('language')}
-              value='Ruby'
-              style={{
-                position: 'relative',
-                borderRadius: 0,
-                boxShadow: 'none',
-                fontWeight: 'bold',
-                color: '#FFFFFF'
-              }}
-            >
-              Ruby
-            </Button>
+              <Button
+                className={classes.hover}
+                disableElevation
+                variant='contained'
+                color='primary'
+                onClick={handleUpdated}
+                style={{
+                  position: 'relative',
+                  borderRadius: 0,
+                  boxShadow: 'none',
+                  fontWeight: 'bold',
+                  color: '#FFFFFF'
+                }}
+              >
+                Updated {updated ? '(oldest)' : '(newest)'}
+              </Button>
+              <Button
+                className={classes.hover}
+                variant='contained'
+                disableElevation
+                color='primary'
+                onClick={handleInputChange('language')}
+                value='HTML'
+                style={{
+                  position: 'relative',
+                  borderRadius: 0,
+                  boxShadow: 'none',
+                  fontWeight: 'bold',
+                  color: '#FFFFFF'
+                }}
+              >
+                HTML
+              </Button>
 
-            <Button
-              className={classes.hover}
-              disableElevation
-              variant='contained'
-              color='primary'
-              onClick={handleUpdated}
+              <br />
+            </Container>
+          ) : (
+            <Container
+              component='main'
+              className={classes.buttonGroup}
               style={{
-                position: 'relative',
-                borderRadius: 0,
-                boxShadow: 'none',
-                fontWeight: 'bold',
-                color: '#FFFFFF'
+                textAlign: 'center'
               }}
             >
-              Updated {updated ? '(oldest)' : '(newest)'}
-            </Button>
-            <Button
-              className={classes.hover}
-              variant='contained'
-              disableElevation
-              color='primary'
-              onClick={handleInputChange('language')}
-              value='HTML'
-              style={{
-                position: 'relative',
-                borderRadius: 0,
-                boxShadow: 'none',
-                fontWeight: 'bold',
-                color: '#FFFFFF'
-              }}
-            >
-              HTML
-            </Button>
+              <Button
+                className={classes.hover}
+                disableElevation
+                variant='contained'
+                color='primary'
+                onClick={handleInputChange('language')}
+                value='All'
+                style={{
+                  position: 'relative',
+                  borderRadius: 0,
+                  boxShadow: 'none',
+                  fontWeight: 'bold',
+                  color: '#FFFFFF'
+                }}
+              >
+                All
+              </Button>
+              <Button
+                className={classes.hover}
+                disableElevation
+                variant='contained'
+                color='primary'
+                onClick={handleCreated}
+                style={{
+                  position: 'relative',
+                  borderRadius: 0,
+                  boxShadow: 'none',
+                  fontWeight: 'bold',
+                  color: '#FFFFFF'
+                }}
+              >
+                Created {created ? '(oldest)' : '(newest)'}
+              </Button>
 
-            <br />
-          </Container>
+              <Button
+                className={classes.hover}
+                disableElevation
+                variant='contained'
+                color='primary'
+                onClick={handleInputChange('language')}
+                value='JavaScript'
+                style={{
+                  position: 'relative',
+                  borderRadius: 0,
+                  boxShadow: 'none',
+                  fontWeight: 'bold'
+                }}
+              >
+                JavaScript
+              </Button>
+              <Button
+                disableElevation
+                className={classes.hover}
+                variant='contained'
+                color='primary'
+                onClick={handleInputChange('language')}
+                value='Ruby'
+                style={{
+                  position: 'relative',
+                  borderRadius: 0,
+                  boxShadow: 'none',
+                  fontWeight: 'bold',
+                  color: '#FFFFFF'
+                }}
+              >
+                Ruby
+              </Button>
+
+              <Button
+                className={classes.hover}
+                disableElevation
+                variant='contained'
+                color='primary'
+                onClick={handleUpdated}
+                style={{
+                  position: 'relative',
+                  borderRadius: 0,
+                  boxShadow: 'none',
+                  fontWeight: 'bold',
+                  color: '#FFFFFF'
+                }}
+              >
+                Updated {updated ? '(oldest)' : '(newest)'}
+              </Button>
+              <Button
+                className={classes.hover}
+                variant='contained'
+                disableElevation
+                color='primary'
+                onClick={handleInputChange('language')}
+                value='HTML'
+                style={{
+                  position: 'relative',
+                  borderRadius: 0,
+                  boxShadow: 'none',
+                  fontWeight: 'bold',
+                  color: '#FFFFFF'
+                }}
+              >
+                HTML
+              </Button>
+
+              <br />
+            </Container>
+          )}
         </Container>
         {!data ? (
           <h1 className={classes.loading}>Initializing Repos...</h1>

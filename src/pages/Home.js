@@ -44,6 +44,10 @@ const useStyles = makeStyles(theme => ({
     color: '#FFFFFF',
     textAlign: 'center',
 
+    '@media (max-width: 768px)': {
+      textAlign: 'left'
+    },
+
     '@media (max-width: 600px)': {
       textAlign: 'left'
     }

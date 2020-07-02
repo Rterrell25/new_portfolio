@@ -1,6 +1,8 @@
 html,
 body {
   width: 100%;
+  margin: 0;
+  padding: 0;
   /* overflow-x: hidden; */
 }
 
@@ -55,6 +57,33 @@ a {
 
   color: #f5f5f5;
   text-align: center;
+}
+
+#portfolio-background {
+  position: relative;
+  overflow: hidden;
+  border: none;
+  background: linear-gradient(
+    to right top,
+    #2d1d7c,
+    #272b87,
+    #213791,
+    #18439a,
+    #0e4ea3,
+    #0359ac,
+    #0065b4,
+    #0070bb,
+    #007ec3,
+    #008cca,
+    #0099cf,
+    #19a6d4
+  );
+
+  color: #f5f5f5;
+}
+
+#portfolio-background > svg {
+  display: block;
 }
 
 .wave-container > svg {

@@ -1,35 +1,35 @@
-import React from "react"
+import React from 'react'
 
 // Material UI
-import Backdrop from "@material-ui/core/Backdrop"
-import Fade from "@material-ui/core/Fade"
-import Modal from "@material-ui/core/Modal"
-import { makeStyles } from "@material-ui/core/styles"
-import Chip from "@material-ui/core/Chip"
-import PlayArrowIcon from "@material-ui/icons/PlayArrow"
+import Backdrop from '@material-ui/core/Backdrop'
+import Fade from '@material-ui/core/Fade'
+import Modal from '@material-ui/core/Modal'
+import { makeStyles } from '@material-ui/core/styles'
+import Chip from '@material-ui/core/Chip'
+import PlayArrowIcon from '@material-ui/icons/PlayArrow'
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles(theme => ({
   hide: {
-    "@media (max-width: 1024px)": {
-      display: "none",
+    '@media (max-width: 1024px)': {
+      display: 'none'
     },
-    "@media (max-width: 700px)": {
-      display: "none",
+    '@media (max-width: 700px)': {
+      display: 'none'
     },
-    "@media (max-width: 600px)": {
-      display: "none",
-    },
+    '@media (max-width: 600px)': {
+      display: 'none'
+    }
   },
 
   modal: {
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "center",
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center'
   },
   paper: {
-    width: "70%",
-    outline: "none",
-  },
+    width: '70%',
+    outline: 'none'
+  }
 }))
 
 const BarHopModal = () => {
@@ -53,7 +53,7 @@ const BarHopModal = () => {
         clickable
         className={classes.hide}
         color='primary'
-        style={{ margin: "1%" }}
+        style={{ margin: '1%' }}
       />
 
       <Modal
@@ -65,7 +65,7 @@ const BarHopModal = () => {
         closeAfterTransition
         BackdropComponent={Backdrop}
         BackdropProps={{
-          timeout: 500,
+          timeout: 500
         }}
       >
         <Fade in={open}>
@@ -73,8 +73,8 @@ const BarHopModal = () => {
             <video
               autoPlay
               style={{
-                width: "100%",
-                objectFit: "contain",
+                width: '100%',
+                objectFit: 'contain'
               }}
             >
               <source src='http://daa792p138h1p.cloudfront.net/Barhop720.mov' />
