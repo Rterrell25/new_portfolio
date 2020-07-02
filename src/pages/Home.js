@@ -37,7 +37,10 @@ const useStyles = makeStyles(theme => ({
     height: '100%',
     margin: 0,
     display: 'grid',
-    placeItems: 'center'
+    placeItems: 'center',
+    '@media (max-width: 600px)': {
+      marginTop: 120
+    }
   },
 
   overlay_text: {
