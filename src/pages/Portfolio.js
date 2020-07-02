@@ -92,13 +92,15 @@ const Portfolio = () => {
           className={classes.wave}
         >
           <Grid item xs={12} sm={9} md={9} lg={6} xl={6}>
-            <Img
-              placeholder={JobTrackerPlace}
-              src={JobTracker}
-              cache={false}
-              alt='JobTracker'
-              className={classes.image}
-            />
+            <ScrollAnimation animateOnce={true} animateIn='fadeInLeft'>
+              <Img
+                placeholder={JobTrackerPlace}
+                src={JobTracker}
+                cache={false}
+                alt='JobTracker'
+                className={classes.image}
+              />
+            </ScrollAnimation>
           </Grid>
 
           <Grid item xs={12} sm={9} md={9} lg={6} xl={6}>
