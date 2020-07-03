@@ -8,6 +8,7 @@ import Navbar from './components/Navbar'
 
 // utils
 import MainTheme from './utils/MainTheme'
+import ScrollToTop from './utils/ScrollToTop'
 
 // pages
 import Home from './pages/Home'
@@ -29,6 +30,7 @@ const App = () => {
       <CssBaseline />
       <div className='App'>
         <Router>
+          <ScrollToTop />
           <Navbar />
           <div className='container'>
             <Switch>

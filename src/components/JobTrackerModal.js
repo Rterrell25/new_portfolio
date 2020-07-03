@@ -46,13 +46,13 @@ const JobTrackerModal = () => {
   return (
     <>
       <Chip
-        icon={<PlayArrowIcon style={{ color: '#0064B3' }} />}
+        icon={<PlayArrowIcon />}
         label='Preview'
         onClick={handleOpen}
         clickable
         className={classes.hide}
-        color='secondary'
-        style={{ margin: '1%', color: '#0064B3' }}
+        color='primary'
+        style={{ margin: '1%' }}
       />
 
       <Modal

@@ -55,8 +55,8 @@ const useStyles = makeStyles(theme => ({
     justifyContent: 'center'
   },
   wave: {
-    height: 450,
     '@media (max-width: 1279px)': {
+      paddingBottom: 60,
       height: 'auto',
       textAlign: 'center'
     }
@@ -82,43 +82,128 @@ const Portfolio = () => {
           >
             My Portfolio Page
           </Typography>
+          <Typography variant='body1' style={{ textAlign: 'center' }}>
+            Click view site in order to visit the domain the project has been
+            hosted on.
+          </Typography>
+          <Typography variant='body1' style={{ textAlign: 'center' }}>
+            Click view code in order to visit the GitHub repo that contains each
+            project's source code
+          </Typography>
+          <Typography variant='body1' style={{ textAlign: 'center' }}>
+            Click preview in order to watch a video preview of each project
+          </Typography>
           <br />
         </Container>
+        <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320'>
+          <path
+            fill='#F5F5F5'
+            fillOpacity='1'
+            d='M0,128L60,154.7C120,181,240,235,360,261.3C480,288,600,288,720,256C840,224,960,160,1080,165.3C1200,171,1320,245,1380,282.7L1440,320L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z'
+          ></path>
+        </svg>
+      </div>
+      <Grid
+        container
+        justify='center'
+        alignItems='center'
+        className={classes.wave}
+      >
+        <Grid item xs={12} sm={9} md={9} lg={6} xl={6}>
+          <ScrollAnimation animateOnce={true} animateIn='fadeInLeft'>
+            <Img
+              placeholder={JobTrackerPlace}
+              src={JobTracker}
+              cache={false}
+              alt='JobTracker'
+              className={classes.image}
+            />
+          </ScrollAnimation>
+        </Grid>
 
-        <Grid
-          container
-          justify='center'
-          alignItems='center'
-          className={classes.wave}
-        >
-          <Grid item xs={12} sm={9} md={9} lg={6} xl={6}>
-            <ScrollAnimation animateOnce={true} animateIn='fadeInLeft'>
-              <Img
-                placeholder={JobTrackerPlace}
-                src={JobTracker}
-                cache={false}
-                alt='JobTracker'
-                className={classes.image}
-              />
-            </ScrollAnimation>
-          </Grid>
+        <Grid item xs={12} sm={9} md={9} lg={6} xl={6}>
+          <Container maxWidth='xs'>
+            <Typography variant='h3' style={{ textAlign: 'center' }}>
+              JobTracker
+            </Typography>
+            <br />
+            <Typography variant='body2'>
+              A platform that allows recent graduates from Wyncode Academy to
+              track job applications. Technologies used: ReactJS, NodeJS, Google
+              Cloud Functions, and Google Firestore.
+            </Typography>
+            <br />
+            <Box className={classes.alumniChips}>
+              <a
+                rel='noopener noreferrer'
+                href='https://jobtracker.netlify.app/'
+                target='_blank'
+                style={{ margin: '1%' }}
+              >
+                <Chip
+                  icon={<LanguageIcon />}
+                  label='View Site'
+                  clickable
+                  color='primary'
+                />
+              </a>
+              <a
+                rel='noopener noreferrer'
+                href='https://github.com/Rterrell25/JobTracker_Client'
+                target='_blank'
+                style={{ margin: '1%' }}
+              >
+                <Chip
+                  icon={<GitHubIcon />}
+                  label='View Code'
+                  clickable
+                  color='primary'
+                />
+              </a>
+              <JobTrackerModal />
+            </Box>
+          </Container>
+        </Grid>
+      </Grid>
+      <Grid
+        id='background'
+        container
+        justify='center'
+        alignItems='center'
+        className={classes.wave}
+      >
+        <Grid item xs={12} sm={9} md={9} lg={6} xl={6}>
+          <ScrollAnimation animateOnce={true} animateIn='fadeInLeft'>
+            <Img
+              placeholder={OddjobsPlace}
+              src={Oddjobs}
+              alt='oddjobs'
+              cache={false}
+              className={classes.image}
+            />
+          </ScrollAnimation>
+        </Grid>
 
-          <Grid item xs={12} sm={9} md={9} lg={6} xl={6}>
-            <Container maxWidth='xs'>
-              <Typography variant='h3' style={{ textAlign: 'center' }}>
-                JobTracker
-              </Typography>
-              <br />
-              <Typography variant='body2'>
-                A platform that allows recent graduates from Wyncode Academy to
-                track job applications. Technologies used: ReactJS, NodeJS,
-                Google Cloud Functions, and Google Firestore.
-              </Typography>
-              <br />
-              <Box className={classes.alumniChips}>
+        <Grid item xs={12} sm={9} md={9} lg={6} xl={6}>
+          <Container maxWidth='xs'>
+            <Typography variant='h3' style={{ textAlign: 'center' }}>
+              Odd Jobs
+            </Typography>
+            <br />
+            <Typography variant='body2'>
+              A platform that pairs consumers with reliable contractors.
+              Technologies used: ReactJS, Ruby on Rails, PostgreSQL, Calendly
+              Integration and Google Maps API.
+            </Typography>
+            <br />
+            <Box className={classes.alumniChips}>
+              <Tooltip
+                title='Please Note: Hosted on free tier of Heroku, site takes a few minutes to load'
+                aria-label='add'
+              >
                 <a
                   rel='noopener noreferrer'
-                  href='https://jobtracker.netlify.app/'
+                  href='https://oddjobs-react.herokuapp.com/'
                   target='_blank'
                   style={{ margin: '1%' }}
                 >
@@ -130,38 +215,32 @@ const Portfolio = () => {
                     style={{ color: '#0064B3' }}
                   />
                 </a>
-                <a
-                  rel='noopener noreferrer'
-                  href='https://github.com/Rterrell25/JobTracker_Client'
-                  target='_blank'
-                  style={{ margin: '1%' }}
-                >
-                  <Chip
-                    icon={<GitHubIcon style={{ color: '#0064B3' }} />}
-                    label='View Code'
-                    clickable
-                    color='secondary'
-                    style={{ color: '#0064B3' }}
-                  />
-                </a>
-                <JobTrackerModal />
-              </Box>
-            </Container>
-          </Grid>
+              </Tooltip>
+              <a
+                rel='noopener noreferrer'
+                href='https://github.com/Rterrell25/Oddjobs_React_App'
+                target='_blank'
+                style={{ margin: '1%' }}
+              >
+                <Chip
+                  icon={<GitHubIcon style={{ color: '#0064B3' }} />}
+                  label='View Code'
+                  clickable
+                  color='secondary'
+                  style={{ color: '#0064B3' }}
+                />
+              </a>
+              <OddjobsModal />
+            </Box>
+          </Container>
         </Grid>
-        <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320'>
-          <path
-            fill='#F5F5F5'
-            fillOpacity='1'
-            d='M0,96L48,128C96,160,192,224,288,261.3C384,299,480,309,576,309.3C672,309,768,299,864,266.7C960,235,1056,181,1152,165.3C1248,149,1344,171,1392,181.3L1440,192L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z'
-          ></path>
-        </svg>
-      </div>
+      </Grid>
       <Grid
-        className={classes.wave}
         container
         justify='center'
         alignItems='center'
+        className={classes.wave}
+        style={{ marginBottom: 60 }}
       >
         <Grid item xs={12} sm={9} md={9} lg={6} xl={6}>
           <ScrollAnimation animateOnce={true} animateIn='fadeInLeft'>
@@ -224,85 +303,6 @@ const Portfolio = () => {
           </Container>
         </Grid>
       </Grid>
-      <div id='portfolio-background'>
-        <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320'>
-          <path
-            fill='#F5F5F5'
-            fillOpacity='1'
-            d='M0,0L60,48C120,96,240,192,360,245.3C480,299,600,309,720,266.7C840,224,960,128,1080,106.7C1200,85,1320,139,1380,165.3L1440,192L1440,0L1380,0C1320,0,1200,0,1080,0C960,0,840,0,720,0C600,0,480,0,360,0C240,0,120,0,60,0L0,0Z'
-          ></path>
-        </svg>
-        <Grid
-          className={classes.wave}
-          container
-          justify='center'
-          alignItems='center'
-          style={{ marginBottom: 300 }}
-        >
-          <Grid item xs={12} sm={9} md={9} lg={6} xl={6}>
-            <ScrollAnimation animateOnce={true} animateIn='fadeInLeft'>
-              <Img
-                placeholder={OddjobsPlace}
-                src={Oddjobs}
-                alt='oddjobs'
-                cache={false}
-                className={classes.image}
-              />
-            </ScrollAnimation>
-          </Grid>
-
-          <Grid item xs={12} sm={9} md={9} lg={6} xl={6}>
-            <Container maxWidth='xs'>
-              <Typography variant='h3' style={{ textAlign: 'center' }}>
-                Odd Jobs
-              </Typography>
-              <br />
-              <Typography variant='body2'>
-                A platform that pairs consumers with reliable contractors.
-                Technologies used: ReactJS, Ruby on Rails, PostgreSQL, Calendly
-                Integration and Google Maps API.
-              </Typography>
-              <br />
-              <Box className={classes.alumniChips}>
-                <Tooltip
-                  title='Please Note: Hosted on free tier of Heroku, site takes a few minutes to load'
-                  aria-label='add'
-                >
-                  <a
-                    rel='noopener noreferrer'
-                    href='https://oddjobs-react.herokuapp.com/'
-                    target='_blank'
-                    style={{ margin: '1%' }}
-                  >
-                    <Chip
-                      icon={<LanguageIcon style={{ color: '#0064B3' }} />}
-                      label='View Site'
-                      clickable
-                      color='secondary'
-                      style={{ color: '#0064B3' }}
-                    />
-                  </a>
-                </Tooltip>
-                <a
-                  rel='noopener noreferrer'
-                  href='https://github.com/Rterrell25/Oddjobs_React_App'
-                  target='_blank'
-                  style={{ margin: '1%' }}
-                >
-                  <Chip
-                    icon={<GitHubIcon style={{ color: '#0064B3' }} />}
-                    label='View Code'
-                    clickable
-                    color='secondary'
-                    style={{ color: '#0064B3' }}
-                  />
-                </a>
-                <OddjobsModal />
-              </Box>
-            </Container>
-          </Grid>
-        </Grid>
-      </div>
     </>
   )
 }
