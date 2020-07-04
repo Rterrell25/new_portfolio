@@ -26,6 +26,16 @@ const useStyles = makeStyles(theme => ({
   grid: {
     padding: 0
   },
+  text: {
+    textAlign: 'center',
+    '@media (max-width: 768px)': {
+      textAlign: 'left'
+    },
+
+    '@media (max-width: 600px)': {
+      textAlign: 'left'
+    }
+  },
 
   image: {
     width: '100%',
@@ -55,6 +65,7 @@ const useStyles = makeStyles(theme => ({
     justifyContent: 'center'
   },
   wave: {
+    height: 545,
     '@media (max-width: 1279px)': {
       paddingBottom: 60,
       height: 'auto',
@@ -82,15 +93,15 @@ const Portfolio = () => {
           >
             My Portfolio Page
           </Typography>
-          <Typography variant='body1' style={{ textAlign: 'center' }}>
+          <Typography variant='body1' className={classes.text}>
             Click view site in order to visit the domain the project has been
             hosted on.
           </Typography>
-          <Typography variant='body1' style={{ textAlign: 'center' }}>
+          <Typography variant='body1' className={classes.text}>
             Click view code in order to visit the GitHub repo that contains each
             project's source code
           </Typography>
-          <Typography variant='body1' style={{ textAlign: 'center' }}>
+          <Typography variant='body1' className={classes.text}>
             Click preview in order to watch a video preview of each project
           </Typography>
           <br />
