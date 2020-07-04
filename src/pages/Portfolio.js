@@ -67,105 +67,111 @@ const useStyles = makeStyles(theme => ({
   wave: {
     height: 545,
     '@media (max-width: 1279px)': {
-      height: 755,
-      paddingBottom: 60,
+      height: 745,
+      paddingBottom: 65,
+
+      textAlign: 'center'
+    },
+    '@media (max-width: 1260px)': {
+      height: 740,
+      paddingBottom: 65,
 
       textAlign: 'center'
     },
     '@media (max-width: 1236px)': {
       height: 730,
-      paddingBottom: 60,
+      paddingBottom: 65,
 
       textAlign: 'center'
     },
     '@media (max-width: 1125px)': {
       height: 715,
-      paddingBottom: 60,
+      paddingBottom: 65,
 
       textAlign: 'center'
     },
     '@media (max-width: 1096px)': {
       height: 692,
-      paddingBottom: 60,
+      paddingBottom: 65,
 
       textAlign: 'center'
     },
     '@media (max-width: 963px)': {
       height: 660,
-      paddingBottom: 60,
+      paddingBottom: 65,
 
       textAlign: 'center'
     },
 
     '@media (max-width: 934px)': {
       height: 640,
-      paddingBottom: 60,
+      paddingBottom: 65,
 
       textAlign: 'center'
     },
     '@media (max-width: 910px)': {
       height: 630,
-      paddingBottom: 60,
+      paddingBottom: 65,
 
       textAlign: 'center'
     },
     '@media (max-width: 875px)': {
       height: 760,
-      paddingBottom: 60,
+      paddingBottom: 65,
 
       textAlign: 'center'
     },
     '@media (max-width: 800px)': {
       height: 700,
-      paddingBottom: 60,
+      paddingBottom: 65,
 
       textAlign: 'center'
     },
     '@media (max-width: 750px)': {
       height: 680,
-      paddingBottom: 60,
+      paddingBottom: 65,
 
       textAlign: 'center'
     },
     '@media (max-width: 700px)': {
       height: 664,
-      paddingBottom: 60,
+      paddingBottom: 65,
 
       textAlign: 'center'
     },
     '@media (max-width: 650px)': {
       height: 640,
-      paddingBottom: 60,
+      paddingBottom: 65,
 
       textAlign: 'center'
     },
     '@media (max-width: 610px)': {
       height: 600,
-      paddingBottom: 60,
+      paddingBottom: 65,
 
       textAlign: 'center'
     },
     '@media (max-width: 602px)': {
       height: 725,
-      paddingBottom: 60,
+      paddingBottom: 65,
 
       textAlign: 'center'
     },
     '@media (max-width: 555px)': {
       height: 673,
-      paddingBottom: 60,
+      paddingBottom: 65,
 
       textAlign: 'center'
     },
     '@media (max-width: 414px)': {
       height: 571,
-      paddingBottom: 60,
+      paddingBottom: 65,
 
       textAlign: 'center'
     },
     '@media (max-width: 380px)': {
       height: 541,
-      paddingBottom: 60,
+      paddingBottom: 65,
 
       textAlign: 'center'
     }
