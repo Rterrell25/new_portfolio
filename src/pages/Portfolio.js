@@ -145,7 +145,7 @@ const useStyles = makeStyles(theme => ({
 
       textAlign: 'center'
     },
-    '@media (max-width: 595px)': {
+    '@media (max-width: 602px)': {
       height: 725,
       paddingBottom: 60,
 
