@@ -23,30 +23,22 @@ import LanguageIcon from '@material-ui/icons/Language'
 import Grid from '@material-ui/core/Grid'
 
 const useStyles = makeStyles(theme => ({
-  grid: {
-    padding: 0
-  },
-  text: {
-    textAlign: 'center',
-    '@media (max-width: 768px)': {
-      textAlign: 'left'
-    },
-
-    '@media (max-width: 600px)': {
-      textAlign: 'left'
-    }
-  },
-
-  image: {
+  root: props => ({
+    position: 'relative',
+    width: props.width ? props.width : '100%',
+    paddingBottom: props.width ? props.width : '100%',
+    borderRadius: theme.shape.borderRadius,
+    overflow: 'hidden'
+  }),
+  content: {
+    position: 'absolute',
     width: '100%',
-    margin: 0,
-    padding: 0,
-    '@media (max-width: 1279px)': {
-      width: '70%'
-    },
-    '@media (max-width: 875px)': {
-      width: '100%'
-    }
+    height: '100%'
+  },
+  img: {
+    width: '100%',
+    height: '100%',
+    objectFit: 'cover'
   },
 
   hide: {
@@ -65,114 +57,8 @@ const useStyles = makeStyles(theme => ({
     justifyContent: 'center'
   },
   wave: {
-    height: 545,
-    '@media (max-width: 1279px)': {
-      height: 745,
-      paddingBottom: 65,
-
-      textAlign: 'center'
-    },
-    '@media (max-width: 1260px)': {
-      height: 740,
-      paddingBottom: 65,
-
-      textAlign: 'center'
-    },
-    '@media (max-width: 1236px)': {
-      height: 730,
-      paddingBottom: 65,
-
-      textAlign: 'center'
-    },
-    '@media (max-width: 1125px)': {
-      height: 715,
-      paddingBottom: 65,
-
-      textAlign: 'center'
-    },
-    '@media (max-width: 1096px)': {
-      height: 692,
-      paddingBottom: 65,
-
-      textAlign: 'center'
-    },
-    '@media (max-width: 963px)': {
-      height: 660,
-      paddingBottom: 65,
-
-      textAlign: 'center'
-    },
-
-    '@media (max-width: 934px)': {
-      height: 640,
-      paddingBottom: 65,
-
-      textAlign: 'center'
-    },
-    '@media (max-width: 910px)': {
-      height: 630,
-      paddingBottom: 65,
-
-      textAlign: 'center'
-    },
-    '@media (max-width: 875px)': {
-      height: 760,
-      paddingBottom: 65,
-
-      textAlign: 'center'
-    },
-    '@media (max-width: 800px)': {
-      height: 700,
-      paddingBottom: 65,
-
-      textAlign: 'center'
-    },
-    '@media (max-width: 750px)': {
-      height: 680,
-      paddingBottom: 65,
-
-      textAlign: 'center'
-    },
-    '@media (max-width: 700px)': {
-      height: 664,
-      paddingBottom: 65,
-
-      textAlign: 'center'
-    },
-    '@media (max-width: 650px)': {
-      height: 640,
-      paddingBottom: 65,
-
-      textAlign: 'center'
-    },
-    '@media (max-width: 610px)': {
-      height: 600,
-      paddingBottom: 65,
-
-      textAlign: 'center'
-    },
-    '@media (max-width: 602px)': {
-      height: 725,
-      paddingBottom: 65,
-
-      textAlign: 'center'
-    },
-    '@media (max-width: 555px)': {
-      height: 673,
-      paddingBottom: 65,
-
-      textAlign: 'center'
-    },
-    '@media (max-width: 414px)': {
-      height: 571,
-      paddingBottom: 65,
-
-      textAlign: 'center'
-    },
-    '@media (max-width: 380px)': {
-      height: 541,
-      paddingBottom: 65,
-
+    '@media (max-width: 959px)': {
+      paddingBottom: 100,
       textAlign: 'center'
     }
   }
@@ -197,18 +83,6 @@ const Portfolio = () => {
           >
             My Portfolio Page
           </Typography>
-          <Typography variant='body1' className={classes.text}>
-            Click view site in order to visit the domain the project has been
-            hosted on.
-          </Typography>
-          <Typography variant='body1' className={classes.text}>
-            Click view code in order to visit the GitHub repo that contains each
-            project's source code
-          </Typography>
-          <Typography variant='body1' className={classes.text}>
-            Click preview in order to watch a video preview of each project
-          </Typography>
-          <br />
         </Container>
         <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320'>
           <path
@@ -218,27 +92,34 @@ const Portfolio = () => {
           ></path>
         </svg>
       </div>
+
       <Grid
         container
         justify='center'
         alignItems='center'
         className={classes.wave}
       >
-        <Grid item xs={12} sm={9} md={9} lg={6} xl={6}>
-          <ScrollAnimation animateOnce={true} animateIn='fadeInLeft'>
-            <Img
-              placeholder={JobTrackerPlace}
-              src={JobTracker}
-              cache={false}
-              alt='JobTracker'
-              className={classes.image}
-            />
-          </ScrollAnimation>
+        <Grid item xs={9} sm={7} md={6} lg={6} xl={6}>
+          <Container maxWidth='sm'>
+            <ScrollAnimation animateOnce={true} animateIn='fadeInLeft'>
+              <div className={classes.root}>
+                <div className={classes.content}>
+                  <Img
+                    placeholder={JobTrackerPlace}
+                    src={JobTracker}
+                    alt='jobtracker'
+                    cache={false}
+                    className={classes.img}
+                  />
+                </div>
+              </div>
+            </ScrollAnimation>
+          </Container>
         </Grid>
 
-        <Grid item xs={12} sm={9} md={9} lg={6} xl={6}>
+        <Grid item xs={9} sm={7} md={6} lg={6} xl={6}>
           <Container maxWidth='xs'>
-            <Typography variant='h3' style={{ textAlign: 'center' }}>
+            <Typography variant='h4' style={{ textAlign: 'center' }}>
               JobTracker
             </Typography>
             <br />
@@ -280,6 +161,7 @@ const Portfolio = () => {
           </Container>
         </Grid>
       </Grid>
+
       <Grid
         id='background'
         container
@@ -287,21 +169,27 @@ const Portfolio = () => {
         alignItems='center'
         className={classes.wave}
       >
-        <Grid item xs={12} sm={9} md={9} lg={6} xl={6}>
-          <ScrollAnimation animateOnce={true} animateIn='fadeInLeft'>
-            <Img
-              placeholder={OddjobsPlace}
-              src={Oddjobs}
-              alt='oddjobs'
-              cache={false}
-              className={classes.image}
-            />
-          </ScrollAnimation>
+        <Grid item xs={9} sm={7} md={6} lg={6} xl={6}>
+          <Container maxWidth='sm'>
+            <ScrollAnimation animateOnce={true} animateIn='fadeInLeft'>
+              <div className={classes.root}>
+                <div className={classes.content}>
+                  <Img
+                    placeholder={OddjobsPlace}
+                    src={Oddjobs}
+                    alt='oddjobs'
+                    cache={false}
+                    className={classes.img}
+                  />
+                </div>
+              </div>
+            </ScrollAnimation>
+          </Container>
         </Grid>
 
-        <Grid item xs={12} sm={9} md={9} lg={6} xl={6}>
+        <Grid item xs={9} sm={7} md={6} lg={6} xl={6}>
           <Container maxWidth='xs'>
-            <Typography variant='h3' style={{ textAlign: 'center' }}>
+            <Typography variant='h4' style={{ textAlign: 'center' }}>
               Odd Jobs
             </Typography>
             <br />
@@ -355,23 +243,28 @@ const Portfolio = () => {
         justify='center'
         alignItems='center'
         className={classes.wave}
-        style={{ marginBottom: 60 }}
       >
-        <Grid item xs={12} sm={9} md={9} lg={6} xl={6}>
-          <ScrollAnimation animateOnce={true} animateIn='fadeInLeft'>
-            <Img
-              placeholder={BarhopPlace}
-              src={BarHop}
-              alt='barhop'
-              cache={false}
-              className={classes.image}
-            />
-          </ScrollAnimation>
+        <Grid item xs={9} sm={7} md={6} lg={6} xl={6}>
+          <Container maxWidth='sm'>
+            <ScrollAnimation animateOnce={true} animateIn='fadeInLeft'>
+              <div className={classes.root}>
+                <div className={classes.content}>
+                  <Img
+                    placeholder={BarhopPlace}
+                    src={BarHop}
+                    alt='barhop'
+                    cache={false}
+                    className={classes.img}
+                  />
+                </div>
+              </div>
+            </ScrollAnimation>
+          </Container>
         </Grid>
 
-        <Grid item xs={12} sm={9} md={9} lg={6} xl={6}>
+        <Grid item xs={9} sm={7} md={6} lg={6} xl={6}>
           <Container maxWidth='xs'>
-            <Typography variant='h3' style={{ textAlign: 'center' }}>
+            <Typography variant='h4' style={{ textAlign: 'center' }}>
               BarHop
             </Typography>
             <br />
