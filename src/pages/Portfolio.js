@@ -108,6 +108,7 @@ const Portfolio = () => {
                     placeholder={JobTrackerPlace}
                     src={JobTracker}
                     alt='jobtracker'
+                    cache={false}
                     className={classes.img}
                   />
                 </div>
