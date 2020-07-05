@@ -54,19 +54,26 @@ const Test = () => {
         centered
         autoPlay={7500}
         breakpoints={{
-          1024: {
+          1276: {
             // these props will be applied when screen width is less than 1000px
             slidesPerPage: 2,
             slidesPerScroll: 1,
             clickToChange: false,
             centered: false
           },
-          800: {
+          1119: {
+            // these props will be applied when screen width is less than 1000px
             slidesPerPage: 1,
             slidesPerScroll: 1,
             clickToChange: false,
-            centered: true
+            centered: false
           }
+          // 800: {
+          //   slidesPerPage: 1,
+          //   slidesPerScroll: 1,
+          //   clickToChange: false,
+          //   centered: true
+          // }
         }}
       >
         <div className={classes.item}>

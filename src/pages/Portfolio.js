@@ -104,11 +104,9 @@ const Portfolio = () => {
             <ScrollAnimation animateOnce={true} animateIn='fadeInLeft'>
               <div className={classes.root}>
                 <div className={classes.content}>
-                  <Img
-                    placeholder={JobTrackerPlace}
+                  <img
                     src={JobTracker}
                     alt='jobtracker'
-                    cache={false}
                     className={classes.img}
                   />
                 </div>
