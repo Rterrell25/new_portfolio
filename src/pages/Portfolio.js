@@ -4,6 +4,7 @@ import Oddjobs from '../images/Oddjobs.png'
 import JobTracker from '../images/JobTracker.png'
 import BarhopPlace from '../images/BarhopPlace.png'
 import OddjobsPlace from '../images/OddjobsPlace.png'
+import JobTrackerPlace from '../images/JobTrackerPlace.png'
 import Img from 'react-cool-img'
 import BarHopModal from '../components/BarHopModal'
 import OddjobsModal from '../components/OddjobsModal'
@@ -103,7 +104,8 @@ const Portfolio = () => {
             <ScrollAnimation animateOnce={true} animateIn='fadeInLeft'>
               <div className={classes.root}>
                 <div className={classes.content}>
-                  <img
+                  <Img
+                    placeholder={JobTrackerPlace}
                     src={JobTracker}
                     alt='jobtracker'
                     className={classes.img}
