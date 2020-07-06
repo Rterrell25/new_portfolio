@@ -4,6 +4,7 @@ import Resume from '../Resume/Resume.pdf'
 import { Link } from 'react-scroll'
 import Test from '../components/Test'
 import ContactLink from '../utils/ContactLink'
+import Contact from '../components/Contact'
 
 // MUI
 import Grid from '@material-ui/core/Grid'
@@ -261,7 +262,7 @@ const Home = () => {
       <Container style={{ marginBottom: 100, marginTop: 40 }}>
         <br />
 
-        <Typography variant='h6' style={{ textAlign: 'center' }}>
+        <Typography variant='h6' id='social' style={{ textAlign: 'center' }}>
           A Brief Background...
         </Typography>
         <Typography
@@ -277,7 +278,6 @@ const Home = () => {
           variant='h4'
           className={classes.heroFont}
           style={{ textTransform: 'uppercase', textAlign: 'center' }}
-          id='social'
         >
           ROBERT FRANCIS <span style={{ color: '#0B54C1' }}>TERRELL</span>
         </Typography>
@@ -323,6 +323,7 @@ const Home = () => {
         </Typography>
         <br />
       </Container>
+      <Contact />
     </>
   )
 }

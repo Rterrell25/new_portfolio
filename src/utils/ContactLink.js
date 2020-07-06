@@ -1,28 +1,25 @@
 import React from 'react'
-import { NavLink } from 'react-router-dom'
+import { Link } from 'react-scroll'
 
 // Material UI
 import Typography from '@material-ui/core/Typography'
-import Link from '@material-ui/core/Link'
 
 const ContactLink = () => {
   return (
     <>
-      <Typography variant='h4' style={{ textAlign: 'center' }}>
-        <Link
-          component={NavLink}
-          to='/contact'
-          style={{ color: '#FFFFFF', textDecoration: 'none' }}
-        >
+      <Typography
+        variant='h4'
+        style={{ textAlign: 'center', cursor: 'pointer' }}
+      >
+        <Link to='form' smooth={true} offset={50} duration={1500}>
           Interested?
         </Link>
       </Typography>
-      <Typography variant='body2' style={{ textAlign: 'center' }}>
-        <Link
-          component={NavLink}
-          to='/contact'
-          style={{ color: '#FFFFFF', textDecoration: 'none' }}
-        >
+      <Typography
+        variant='body2'
+        style={{ textAlign: 'center', cursor: 'pointer' }}
+      >
+        <Link to='form' smooth={true} offset={50} duration={1500}>
           Contact Me
         </Link>
       </Typography>

@@ -13,7 +13,6 @@ import ScrollToTop from './utils/ScrollToTop'
 // pages
 import Home from './pages/Home'
 import Github from './pages/Github'
-import Contact from './pages/Contact'
 import Portfolio from './pages/Portfolio'
 
 // MUI
@@ -36,7 +35,6 @@ const App = () => {
             <Switch>
               <Route exact path='/github' component={Github} />
               <Route exact path='/portfolio' component={Portfolio} />
-              <Route exact path='/contact' component={Contact} />
               <Route exact path='/' component={Home} />
             </Switch>
           </div>

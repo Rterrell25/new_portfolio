@@ -1,11 +1,11 @@
-import React from "react"
-import { Link } from "react-router-dom"
+import React from 'react'
+import { Link } from 'react-router-dom'
 
 // Material UI
-import Button from "@material-ui/core/Button"
+import Button from '@material-ui/core/Button'
 
-import Grid from "@material-ui/core/Grid"
-import Container from "@material-ui/core/Container"
+import Grid from '@material-ui/core/Grid'
+import Container from '@material-ui/core/Container'
 
 const Header = () => {
   return (
@@ -24,9 +24,6 @@ const Header = () => {
               </Button>
               <Button color='inherit' component={Link} to='/portfolio'>
                 Portfolio
-              </Button>
-              <Button color='inherit' component={Link} to='/contact'>
-                Contact
               </Button>
             </>
           </div>
