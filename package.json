@@ -14,7 +14,7 @@
     "animate.css": "^4.1.0",
     "axios": "^0.19.2",
     "kruulik-react-carousel": "^1.4.2",
-    "moment": "^2.24.0",
+    "moment": "^2.29.4",
     "react": "^16.13.1",
     "react-animate-on-scroll": "^2.1.5",
     "react-cool-img": "^1.1.2",
